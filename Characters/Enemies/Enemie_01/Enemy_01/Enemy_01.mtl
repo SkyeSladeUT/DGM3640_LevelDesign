@@ -1,0 +1,121 @@
+# Exported from Fuse 2017.1.0
+
+newmtl Shoes
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Shoes_Opacity.png
+map_Kd Enemy_01_Shoes_Diffuse.png
+adobe_map_normal Enemy_01_Shoes_Normal.png
+map_Ks Enemy_01_Shoes_Specular.png
+adobe_map_shininess Enemy_01_Shoes_Gloss.png
+
+newmtl Bottom
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Bottom_Opacity.png
+map_Kd Enemy_01_Bottom_Diffuse.png
+adobe_map_normal Enemy_01_Bottom_Normal.png
+map_Ks Enemy_01_Bottom_Specular.png
+adobe_map_shininess Enemy_01_Bottom_Gloss.png
+
+newmtl Moustache
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Moustache_Opacity.png
+map_Kd Enemy_01_Moustache_Diffuse.png
+adobe_map_normal Enemy_01_Moustache_Normal.png
+map_Ks Enemy_01_Moustache_Specular.png
+adobe_map_shininess Enemy_01_Moustache_Gloss.png
+
+newmtl Top
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Top_Opacity.png
+map_Kd Enemy_01_Top_Diffuse.png
+adobe_map_normal Enemy_01_Top_Normal.png
+map_Ks Enemy_01_Top_Specular.png
+adobe_map_shininess Enemy_01_Top_Gloss.png
+
+newmtl Beard
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Beard_Opacity.png
+map_Kd Enemy_01_Beard_Diffuse.png
+adobe_map_normal Enemy_01_Beard_Normal.png
+map_Ks Enemy_01_Beard_Specular.png
+adobe_map_shininess Enemy_01_Beard_Gloss.png
+
+newmtl Body
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Body_Opacity.png
+map_Kd Enemy_01_Body_Diffuse.png
+adobe_map_normal Enemy_01_Body_Normal.png
+map_Ks Enemy_01_Body_Specular.png
+adobe_map_shininess Enemy_01_Body_Gloss.png
+
+newmtl Glove
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d Enemy_01_Glove_Opacity.png
+map_Kd Enemy_01_Glove_Diffuse.png
+adobe_map_normal Enemy_01_Glove_Normal.png
+map_Ks Enemy_01_Glove_Specular.png
+adobe_map_shininess Enemy_01_Glove_Gloss.png
+

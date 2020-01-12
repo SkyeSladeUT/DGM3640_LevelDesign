@@ -1,0 +1,104 @@
+# Exported from Fuse 2017.1.0
+
+newmtl Glove
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Glove_Opacity.png
+map_Kd FriendCharacter_Glove_Diffuse.png
+adobe_map_normal FriendCharacter_Glove_Normal.png
+map_Ks FriendCharacter_Glove_Specular.png
+adobe_map_shininess FriendCharacter_Glove_Gloss.png
+
+newmtl Hair
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Hair_Opacity.png
+map_Kd FriendCharacter_Hair_Diffuse.png
+adobe_map_normal FriendCharacter_Hair_Normal.png
+map_Ks FriendCharacter_Hair_Specular.png
+adobe_map_shininess FriendCharacter_Hair_Gloss.png
+
+newmtl Bottom
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Bottom_Opacity.png
+map_Kd FriendCharacter_Bottom_Diffuse.png
+adobe_map_normal FriendCharacter_Bottom_Normal.png
+map_Ks FriendCharacter_Bottom_Specular.png
+adobe_map_shininess FriendCharacter_Bottom_Gloss.png
+
+newmtl Top
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Top_Opacity.png
+map_Kd FriendCharacter_Top_Diffuse.png
+adobe_map_normal FriendCharacter_Top_Normal.png
+map_Ks FriendCharacter_Top_Specular.png
+adobe_map_shininess FriendCharacter_Top_Gloss.png
+
+newmtl Shoes
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Shoes_Opacity.png
+map_Kd FriendCharacter_Shoes_Diffuse.png
+adobe_map_normal FriendCharacter_Shoes_Normal.png
+map_Ks FriendCharacter_Shoes_Specular.png
+adobe_map_shininess FriendCharacter_Shoes_Gloss.png
+
+newmtl Body
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d FriendCharacter_Body_Opacity.png
+map_Kd FriendCharacter_Body_Diffuse.png
+adobe_map_normal FriendCharacter_Body_Normal.png
+map_Ks FriendCharacter_Body_Specular.png
+adobe_map_shininess FriendCharacter_Body_Gloss.png
+
