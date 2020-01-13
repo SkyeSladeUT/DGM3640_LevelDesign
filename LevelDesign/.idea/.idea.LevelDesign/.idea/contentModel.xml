@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Owner\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_LevelDesign.322344011.00" t="ExcludeRecursive" />
+    <e p="E:\School\College\Spring2020\LevelDesign\DGM3640_LevelDesign\LevelDesign" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="BasicBandit" t="Include">
+          <e p="DemoSceneBasicBandit" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ButtonFunction.cs" t="Include" />
+              <e p="MovementCamera.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="BodyGuards" t="Include">
+          <e p="ReadMe.txt.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Data" t="Include">
+            <e p="FloatData.cs" t="Include" />
+            <e p="FloatDataInput.cs" t="Include" />
+          </e>
+          <e p="PlayerMovement" t="Include">
+            <e p="CameraMovement.cs" t="Include" />
+            <e p="MovementData.cs" t="Include" />
+            <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerRotation.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="LevelDesign.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
