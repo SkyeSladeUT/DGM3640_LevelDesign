@@ -18,15 +18,20 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Data" t="Include">
+            <e p="BoolData.cs" t="Include" />
             <e p="FloatData.cs" t="Include" />
             <e p="FloatDataInput.cs" t="Include" />
+            <e p="PlayerData.cs" t="Include" />
           </e>
+          <e p="OnStartEvents.cs" t="Include" />
           <e p="PlayerMovement" t="Include">
             <e p="CameraMovement.cs" t="Include" />
             <e p="MovementData.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="PlayerRotation.cs" t="Include" />
+            <e p="ThrowItem.cs" t="Include" />
           </e>
+          <e p="WeaponPile.cs" t="Include" />
         </e>
       </e>
       <e p="LevelDesign.sln" t="IncludeFlat" />

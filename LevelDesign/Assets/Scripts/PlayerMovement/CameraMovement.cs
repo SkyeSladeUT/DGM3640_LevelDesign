@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     public Transform followObj;
     private float x, y;
     public float CamSpeed;
+    public float sensitivity;
 
     private void Start()
     {
@@ -29,14 +30,11 @@ public class CameraMovement : MonoBehaviour
             rotation = transform.rotation.eulerAngles;
             rotation.x -= y * CamSpeed;
             rotation.y += x * CamSpeed;
+            rotation.z = 0;
             quat = Quaternion.Euler(rotation);
-            transform.rotation = quat;
-            //transform.Rotate(y*CamSpeed, x*CamSpeed, 0);
-            /*float mouseY = (Input.mousePosition.y / Screen.height) - 0.5f;
-            float mouseX = (Input.mousePosition.x / Screen.width) - .5f;
-            transform.localRotation =
-                Quaternion.Euler(new Vector4(-1f * (mouseY * 100f), mouseX * 180f, transform.localRotation.z));
-            */yield return new WaitForFixedUpdate();
+            //transform.rotation = quat;
+            transform.rotation = Quaternion.Lerp(transform.rotation, quat, sensitivity*Time.deltaTime);
+            yield return new WaitForFixedUpdate();
         }
     }
 }
