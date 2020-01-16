@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     private bool canMove = true;
-    private Vector3 movement, rotation;
+    private Vector3 movement, rotation, offset;
     private Quaternion quat;
     public Transform followObj;
     private float x, y;
@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
+        offset = transform.position - followObj.position;
         Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(CamMove());
     }
@@ -22,7 +23,7 @@ public class CameraMovement : MonoBehaviour
     {
         while (canMove)
         {
-            movement = followObj.position;
+            movement = followObj.position + offset;
             movement.y = transform.position.y;
             transform.position = movement;
             x = Input.GetAxis("Mouse X");

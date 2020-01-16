@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262ad9e11e01e2b43a75cbab11f29b46, type: 3}
   m_Name: SideSpeed
   m_EditorClassIdentifier: 
-  value: 3
+  value: 5
   AxisName: Horizontal
