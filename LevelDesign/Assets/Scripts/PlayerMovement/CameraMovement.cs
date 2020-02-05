@@ -24,7 +24,6 @@ public class CameraMovement : MonoBehaviour
         while (canMove)
         {
             movement = followObj.position + offset;
-            movement.y = transform.position.y;
             transform.position = movement;
             x = Input.GetAxis("Mouse X");
             y = Input.GetAxis("Mouse Y");

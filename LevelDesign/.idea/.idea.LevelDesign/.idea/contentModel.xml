@@ -5,17 +5,6 @@
     <e p="E:\School\College\Spring2020\LevelDesign\DGM3640_LevelDesign\LevelDesign" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="BasicBandit" t="Include">
-          <e p="DemoSceneBasicBandit" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="ButtonFunction.cs" t="Include" />
-              <e p="MovementCamera.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="BodyGuards" t="Include">
-          <e p="ReadMe.txt.txt" t="Include" />
-        </e>
         <e p="Scripts" t="Include">
           <e p="Data" t="Include">
             <e p="BoolData.cs" t="Include" />
