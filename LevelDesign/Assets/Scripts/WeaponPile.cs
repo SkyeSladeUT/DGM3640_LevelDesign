@@ -13,6 +13,12 @@ public class WeaponPile : MonoBehaviour
     private bool inTrigger;
     public UnityEvent OnGrab;
 
+    private void Start()
+    {
+        player.hasBrick = false;
+        player.brickRB = null;
+    }
+
     public void GetWeapon()
     {
         weaponInstance = Instantiate(weaponPrefab);

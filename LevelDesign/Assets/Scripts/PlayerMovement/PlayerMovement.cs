@@ -8,18 +8,18 @@ using UnityEngine.Experimental.PlayerLoop;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController cc;
-    private bool canMove = true, canCrouch = true, isCrouched = false;
+    private bool canMove = true, canCrouch = true;
+    [HideInInspector]
+    public bool isCrouched = false;
     public MovementData moveData;
     private Vector3 movement, scale;
     private float gravity;
     public float gravitySpeed;
-    private bool onGround;
     private float origHeight, shrunkHeight;
     public float CrouchDecrease;
 
     private void Start()
     {
-        onGround = false;
         cc = GetComponent<CharacterController>();
         StartCoroutine(Move());
         StartCoroutine(Crouch());
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             movement.y -= gravity;
             if (!cc.isGrounded)
             {
-                Debug.Log("OffGround");
+                //Debug.Log("OffGround");
                 if(gravity < 1)
                     gravity += Time.deltaTime * gravitySpeed;
             }
