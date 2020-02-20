@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: faa7a3f22ef233240b04e56e0802d971
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment01Exterior_Mat
+    second: {fileID: 2100000, guid: 14a99a90855a78a40b894b077bd2cfbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment02_part01_Mat
+    second: {fileID: 2100000, guid: 7a33f199265592d469a270b656d3b1ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment02_part02_Mat
+    second: {fileID: 2100000, guid: 595b37227af482c4096449e837e0637a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment03_Mat
+    second: {fileID: 2100000, guid: 9409c191d00d4af42acf705a6b813163, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment04_Mat
+    second: {fileID: 2100000, guid: bbef511fc578be34eb9451189ef6b740, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment05_Mat
+    second: {fileID: 2100000, guid: 626ac751b87784e468169a7cb643762d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment06_Mat
+    second: {fileID: 2100000, guid: 3d5e96d643fe1a743ba82f262ac063ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment07_Mat
+    second: {fileID: 2100000, guid: 59e5e026351a41747babcefc04164080, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment08_Mat
+    second: {fileID: 2100000, guid: 24962b3704ece094ab0a172c9d9edf1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment09_Mat
+    second: {fileID: 2100000, guid: 48b325fb2759e814cac0e0be20b9e0f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment10_Mat
+    second: {fileID: 2100000, guid: 78b7c8b8f57101c4e9b0813e38db878a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment11_Mat
+    second: {fileID: 2100000, guid: b473f1592c03f0a46a91b1d6b241a5f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apartment12_Mat
+    second: {fileID: 2100000, guid: 9acebf42a69ef534ab2c4a359ae60dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ApartmentCeiling_Mat
+    second: {fileID: 2100000, guid: 8cc314437ac038f4b9f6abf12a614a59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ApartmentFloor_Mat
+    second: {fileID: 2100000, guid: a17f586d028997e47a4741e928acaeec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BathroomSink_Mat
+    second: {fileID: 2100000, guid: 581be6d5f17a0a04488e0688670a1f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathroom_Assets_Mat
+    second: {fileID: 2100000, guid: b51b457b7ef562f40a24d0d6cc60e6fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Books_Mat
+    second: {fileID: 2100000, guid: 187c5c58308b5ea4897ec1a4805327f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bookshelf_Mat
+    second: {fileID: 2100000, guid: 6b64d8933d1dc1a448cdde30576146e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle_Brick_Mat
+    second: {fileID: 2100000, guid: dee3cf85aae13a746831f8fb7876ee73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box_Mat
+    second: {fileID: 2100000, guid: 049962376e532e24091755a2061b5f63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreakingWindow_Mat
+    second: {fileID: 2100000, guid: 303edd0903ee3934c8e56e4abaeff256, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Computer_Mat
+    second: {fileID: 2100000, guid: 69ebadde68a18f24abbbac5a5964ef00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cooler_Mat
+    second: {fileID: 2100000, guid: 755109d076be9d54d811a12c9b601b90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Couch_Mat
+    second: {fileID: 2100000, guid: 9e9a4314707f11741967a22f039e825f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crate_Mat
+    second: {fileID: 2100000, guid: bc0865ff555bce94daa456265567c30f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curtain_Mat
+    second: {fileID: 2100000, guid: db11d0c5ad9668e499e5a9438664db27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: 614451271dcb7d34d8318a0afb5182d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeskItems_Mat
+    second: {fileID: 2100000, guid: 461a54d415c4a3441807c2802c88a42a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Desk_Mat
+    second: {fileID: 2100000, guid: 89275bc3d732f844c90b9bf644c46bd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Light_Mat
+    second: {fileID: 2100000, guid: 37b30c9fb195eb84cb2f6056715ac8f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dumpster_Mat
+    second: {fileID: 2100000, guid: 2458ee93bfe354b44941c06ea9f67c34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ExteriorDoors_Mat
+    second: {fileID: 2100000, guid: 953741c305f6ebc4e9143404150776c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exterior_Lamp_Mat
+    second: {fileID: 2100000, guid: 500f0b4f85dbe0e42b11d107bf9e1e75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FireEscape_Mat
+    second: {fileID: 2100000, guid: e6d2117fc18a4f946aa674352ed61c97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground_Mat
+    second: {fileID: 2100000, guid: a96cb9e8d926fb74aacdd98d586ea924, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KitchenAssets_Mat
+    second: {fileID: 2100000, guid: 571175ba298091747b9ea6eaff2fe220, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainApartmentDoors_Mat
+    second: {fileID: 2100000, guid: 3034c0f6b290e394e8625a6c246c1b0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainApartmentExterior_Mat
+    second: {fileID: 2100000, guid: 024053f3a94d0da43b35863dfc448ae2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainApartmentInterior_Mat
+    second: {fileID: 2100000, guid: d3835c45241529541ab78604b1d3cdaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OfficeChair_Mat
+    second: {fileID: 2100000, guid: 34f294c860f19ee42b8e1bd5dab5198a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe_Mat
+    second: {fileID: 2100000, guid: 6231583c2f1ec5a439a7f273baee91d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plant_Mat
+    second: {fileID: 2100000, guid: f609feb119273a9478f63ec15e0eaa39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pot_Light_Mat
+    second: {fileID: 2100000, guid: 6ecef6753d9382641afb9849c3c99555, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubble_Mat
+    second: {fileID: 2100000, guid: 7b41a86d6970e0e4399dff5518c31144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sewer_Mat
+    second: {fileID: 2100000, guid: f02663835faad5c49bf137071ad27d4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shower_Mat
+    second: {fileID: 2100000, guid: bfbff255b99adcb479e83f0239f6fc91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SodaCans_Mat
+    second: {fileID: 2100000, guid: 7cab56aded44490488f5899d97d904e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_Chair_Mat
+    second: {fileID: 2100000, guid: 781fc7cbdee31cf40ba91e99e4cdadb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tarp_Mat
+    second: {fileID: 2100000, guid: 8476c0674e6c13043b896b6ad4936b97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet_Mat
+    second: {fileID: 2100000, guid: 4bd8ecbcb4bf6294bb3a11a650dd063d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashBags_Mat
+    second: {fileID: 2100000, guid: e64907ddf13313145bfba8e0e0ca282b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCanLarge_Mat
+    second: {fileID: 2100000, guid: 22f9c857949a4ec4b97d1fe34225438a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCan_Mat
+    second: {fileID: 2100000, guid: dd0fb50a3bf3cfa4cb81f7a23acda2ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trash_Mat
+    second: {fileID: 2100000, guid: ffec9e7c09dd97c4090423820e6b6b0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowSet_02_Mat
+    second: {fileID: 2100000, guid: 3e89a353f1e06ae4c933f1ddfb4c7663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowsSet01_Mat
+    second: {fileID: 2100000, guid: 8babe68608a837f4fbbd7763e4ce9489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire_Mat
+    second: {fileID: 2100000, guid: b78ee76f729827b438d7f84513a4d6d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPallet_Mat
+    second: {fileID: 2100000, guid: ef1b508a9e2e6984fada1df6fec5ca62, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
