@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Owner\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_LevelDesign.322344011.00" t="ExcludeRecursive" />
-    <e p="E:\School\College\Spring2020\LevelDesign\DGM3640_LevelDesign\LevelDesign" t="IncludeRecursive">
+    <e p="C:\Users\10802160\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\10802160\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_LevelDesign.1536222426.00" t="ExcludeRecursive" />
+    <e p="C:\Users\10802160\Documents\Repos\DGM3640_LevelDesign\LevelDesign" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -36,14 +37,22 @@
           </e>
           <e p="WeaponPile.cs" t="Include" />
         </e>
+        <e p="VFX" t="Include">
+          <e p="Breath" t="Include">
+            <e p="CallBackBreath.cs" t="Include" />
+          </e>
+          <e p="Fire" t="Include">
+            <e p="ExplosionFireAndDebris.cs" t="Include" />
+            <e p="ExplosionPhysicsForce.cs" t="Include" />
+            <e p="FireLight.cs" t="Include" />
+          </e>
+          <e p="ParticleSystemMultiplier.cs" t="Include" />
+        </e>
       </e>
       <e p="LevelDesign.sln" t="IncludeFlat" />
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
