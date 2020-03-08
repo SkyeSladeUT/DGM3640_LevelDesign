@@ -18,10 +18,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 7.9
+    value: 0.5
   threshold:
     overrideState: 1
-    value: 1
+    value: 0.25
   softKnee:
     overrideState: 1
     value: 0.5
@@ -68,12 +68,12 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.63
+    value: 0.45
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 0.30411178, g: 0.31602255, b: 0.3207547, a: 1}
   ambientOnly:
-    overrideState: 1
+    overrideState: 0
     value: 0
   noiseFilterTolerance:
     overrideState: 0
@@ -85,8 +85,8 @@ MonoBehaviour:
     overrideState: 0
     value: -12
   thicknessModifier:
-    overrideState: 1
-    value: 1.68
+    overrideState: 0
+    value: 1
   directLightingStrength:
     overrideState: 0
     value: 0
