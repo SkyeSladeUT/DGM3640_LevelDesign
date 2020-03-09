@@ -44,6 +44,7 @@ public class ThrowItem : MonoBehaviour
                         player.brickRB.constraints = RigidbodyConstraints.None;
                         player.brickRB.AddForce(forceDirection, ForceMode.Impulse);
                         yield return new WaitForSeconds(.1f);
+                        player.brickRB.gameObject.GetComponent<Brick>().inHand = false;
                         player.throwBrick();
                         forceImage.fillAmount = 0;
                     }
@@ -73,6 +74,7 @@ public class ThrowItem : MonoBehaviour
             {
                 player.brickRB.transform.parent = null;
                 player.brickRB.constraints = RigidbodyConstraints.None;
+                player.brickRB.gameObject.GetComponent<Brick>().inHand = false;
                 player.throwBrick();
             }
             yield return new WaitForFixedUpdate();

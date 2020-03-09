@@ -112,7 +112,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void TurnTowards(Transform obj)
     {
-        Debug.Log("Turn Towards");
+        //Debug.Log("Turn Towards");
         StopPatrol();
         agent.SetDestination(agent.transform.position);
         if(!running)
@@ -126,7 +126,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator ReturnPos()
     {
-        Debug.Log("Return to Position");
+        //Debug.Log("Return to Position");
         running = true;
         while (!CheckDest(.05f, origPos))
         {
@@ -172,7 +172,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void GoToBrick(Transform brickDest)
     {
-        Debug.Log("Go to Brick");
+        //Debug.Log("Go to Brick");
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -190,7 +190,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator LookAtBrick(Transform target)
     {
-        Debug.Log("Look at Brick");
+        //Debug.Log("Look at Brick");
         running = true;
         while (!CheckDest(.05f, target.position))
         {
@@ -253,10 +253,10 @@ public class EnemyPatrol : MonoBehaviour
     public IEnumerator StunTimer()
     {
         running = true;
-        Debug.Log("Stunned");
+        //Debug.Log("Stunned");
         attack.stunned = true;
         yield return new WaitForSeconds(stunTime);
-        Debug.Log("UnStunned");
+        //Debug.Log("UnStunned");
         attack.stunned = false;
         agent.speed = speed;
         running = false;

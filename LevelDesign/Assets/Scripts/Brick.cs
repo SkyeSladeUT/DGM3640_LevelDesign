@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    [HideInInspector] public bool thrown = false;
+    [HideInInspector] 
+    public bool thrown = false;
+    [HideInInspector]
+    public bool inHand = true;
 
     private void OnCollisionEnter(Collision other)
     {
-        thrown = true;
+        if (!inHand)
+        {
+            //Debug.Log("Thrown");
+            thrown = true;
+        }
     }
 }
