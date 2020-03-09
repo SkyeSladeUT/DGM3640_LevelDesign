@@ -75,6 +75,7 @@ public class EnemyPatrol : MonoBehaviour
                 currentDest++;
                 if (currentDest >= destinations.Count)
                     currentDest = 0;
+                //Debug.Log("Swap Dest, Current Dest: " + currentDest);
             }
 
             agent.destination = destinations[currentDest].position;
@@ -103,6 +104,7 @@ public class EnemyPatrol : MonoBehaviour
     
     public void StopPatrol()
     {
+        //Debug.Log("Stop Patrol");
         running = false;
         onPatrol = false;
         StopCoroutine(Patrol());
@@ -110,6 +112,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void TurnTowards(Transform obj)
     {
+        Debug.Log("Turn Towards");
         StopPatrol();
         agent.SetDestination(agent.transform.position);
         if(!running)
@@ -123,6 +126,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator ReturnPos()
     {
+        Debug.Log("Return to Position");
         running = true;
         while (!CheckDest(.05f, origPos))
         {
@@ -141,6 +145,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator RotateTowards(Transform target)
     {
+        //Debug.Log("Rotate Towards");
         running = true;
         direction = (target.position - transform.position).normalized;
         while (!CheckRot(.05f, Quaternion.LookRotation(direction).eulerAngles))
@@ -167,6 +172,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void GoToBrick(Transform brickDest)
     {
+        Debug.Log("Go to Brick");
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -175,6 +181,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void GoToDest(Vector3 newDest)
     {
+        //Debug.Log("Go To Destination");
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -183,6 +190,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator LookAtBrick(Transform target)
     {
+        Debug.Log("Look at Brick");
         running = true;
         while (!CheckDest(.05f, target.position))
         {

@@ -24,8 +24,9 @@ public class EnemyAttack : MonoBehaviour
     {
         if (!stunned && !heardplayer)
         {
-            if (!player.GetComponent<PlayerMovement>().isCrouched)
+            if (!player.GetComponent<PlayerMovement>().isCrouched && player.GetComponent<PlayerMovement>().moving)
             {
+                Debug.Log("heard player");
                 heardplayer = true;
                 patrol.GoToDest(player.transform.position);
             }

@@ -6,6 +6,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Brick.cs" t="Include" />
           <e p="Data" t="Include">
             <e p="BoolData.cs" t="Include" />
             <e p="FloatData.cs" t="Include" />
@@ -35,6 +36,7 @@
             <e p="ThrowItem.cs" t="Include" />
           </e>
           <e p="WeaponPile.cs" t="Include" />
+          <e p="WeaponSingle.cs" t="Include" />
         </e>
         <e p="VFX" t="Include">
           <e p="Breath" t="Include">

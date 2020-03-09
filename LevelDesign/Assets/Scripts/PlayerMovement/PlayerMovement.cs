@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController cc;
     private bool canMove = true, canCrouch = true;
     [HideInInspector]
-    public bool isCrouched = false;
+    public bool isCrouched = false, moving = false;
     public MovementData moveData;
     private Vector3 movement, scale;
     private float gravity;
@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
             movement.y -= gravity;
             if (!cc.isGrounded)
             {
-                //Debug.Log("OffGround");
                 if(gravity < 1)
                     gravity += Time.deltaTime * gravitySpeed;
             }
@@ -60,6 +59,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 gravity = 0;
             }
+            if (movement.x!=0 || movement.z!=0)
+            {
+                moving = true;
+            }
+            else
+            {
+                moving = false;
+            }
+
             cc.Move(movement);   
             yield return new WaitForFixedUpdate();
         }

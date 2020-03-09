@@ -23,12 +23,9 @@ public class EnemyHearingRange : MonoBehaviour
         if (other.CompareTag("Brick"))
         {
             brick = other.gameObject;
-            if (Physics.Raycast(eyeline.transform.position, (brick.transform.position - eyeline.transform.position), out hit,
-                hearingDistance))
+            if (!enemy.heardplayer && !brick.transform.parent.GetComponent<Brick>().thrown)
             {
-                if(hit.collider.CompareTag("Brick"))
-                    if (!enemy.heardplayer)
-                        enemy.HearBrick(brick.transform);
+                enemy.HearBrick(brick.transform.parent.transform);
             }
         }
 
@@ -37,17 +34,20 @@ public class EnemyHearingRange : MonoBehaviour
             playerinRange = true;
         }
     }
+    
 
     private void OnTriggerStay(Collider other)
     {
-            if (playerinRange && Physics.Raycast(eyeline.transform.position, (player.transform.position - eyeline.transform.position), out hit,
-                hearingDistance))
+            if (playerinRange)
             {
-                if (hit.collider.CompareTag("Player") && !enemy.heardplayer)
-                {
-                    enemy.HearPlayer();
-                }
+                enemy.distracted = false;
+               enemy.HearPlayer();
             } 
+        /*if (other.CompareTag("Brick"))
+        {
+            brick = other.gameObject;
+            Debug.DrawRay(eyeline.transform.position, (brick.transform.parent.transform.position - eyeline.transform.position)*hit.distance);
+        }*/
     }
 
     private void OnTriggerExit(Collider other)
