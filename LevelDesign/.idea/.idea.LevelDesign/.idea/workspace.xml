@@ -3,51 +3,104 @@
   <component name="ChangeListManager">
     <list default="true" id="855f8edc-9a10-4f8b-900b-e9a3a83b4bb6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LevelDesign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Prototype/Brick_Prototype.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Prototype/Brick_Prototype.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/Beer_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/Beer_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/Box_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/Box_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/Crate_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/Crate_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/MainApartmentInterior_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/MainApartmentInterior_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/PipeBlack_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/PipeBlack_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/PipeGrey_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/PipeGrey_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/PipeRed_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/PipeRed_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/PipeShiny_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/PipeShiny_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/Rubble_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/Rubble_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/SodaCans_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/SodaCans_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/TrashBags_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/TrashBags_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/Trash_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/Trash_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Environment/WoodPallet_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Environment/WoodPallet_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Brown_Building_Brick_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Brown_Building_Brick_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Brown_Building_Cement_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Brown_Building_Cement_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Dark_Red_Brick_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Dark_Red_Brick_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Dark_Red_Concrete.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Dark_Red_Concrete.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/MainApartmentExterior_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/MainApartmentExterior_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Main_Concrete_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Main_Concrete_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Red_Building_Brick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Red_Building_Brick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/Red_Building_Concrete.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/Red_Building_Concrete.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/White_Building_Concrete_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/White_Building_Concrete_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/TiledTextures/White_Buildings_brick_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/TiledTextures/White_Buildings_brick_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewLayer 1.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewLayer 1.terrainlayer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyCloseRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyCloseRange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyHearingRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyHearingRange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyPatrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyPatrol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/NewLayer.terrainlayer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/NewLayer.terrainlayer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/GroundObjs/GroundObjs_low_WoodPallet_Mat_Color.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/GroundObjs/GroundObjs_low_WoodPallet_Mat_Color.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/MainApartment/MainApartment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/MainApartment/MainApartment.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Pipes/Pipes_low_Pipe_Red_Color.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Pipes/Pipes_low_Pipe_Red_Color.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Pipes/Pipes_low_Pipe_Shiny_Metal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Pipes/Pipes_low_Pipe_Shiny_Metal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Trashbags/trashBags_low_TrashBags_Mat_Metal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Trashbags/trashBags_low_TrashBags_Mat_Metal.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="WeaponSingle.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+              <folding>
+                <marker date="1583799160580" expanded="false" signature="6:104" ph="..." />
+                <marker date="1583799160580" expanded="true" signature="146:1442" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="363:439" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="468:762" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="798:1059" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="862:1053" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="935:992" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="1108:1250" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="1154:1244" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="1298:1440" ph="{...}" />
+                <marker date="1583799160580" expanded="true" signature="1344:1434" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/Vector3Data.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/TriggerEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/CollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/OnStartEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Brick.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyCloseRange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyHearingRange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyPatrol.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponPile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyEyeRange.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuEvents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/BoolData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/FloatDataInput.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/ThrowItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/BoolData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Brick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/MovementData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/ThrowItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/CollisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyPatrol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/Vector3Data.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/VFX/Fire/FireLight.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/VectorListData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyCloseRange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/OnStartEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyEyeRange.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyHearingRange.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventScripts/TriggerEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponPile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/VectorListData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -78,17 +131,46 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponPile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyCloseRange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyHearingRange.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement/ThrowItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Brick.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyMovement/EnemyPatrol.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs" />
       </list>
     </option>
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-10" />
+    <option name="width" value="1400" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1XOXtUdOdiSzXfOxqpRRZaVYDYP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="LevelDesign" type="483dac07:UnityExplorerNode$Root" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
@@ -107,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach Unity.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -116,15 +198,11 @@
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
-      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
-      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor" />
-      <item itemvalue="Attach to Unity Editor.Attach to Unity Editor &amp; Play" />
+      <item itemvalue="Attach Unity.Attach to Unity Editor" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -148,8 +226,47 @@
       <workItem from="1583610098441" duration="1223000" />
       <workItem from="1583706074534" duration="7082000" />
       <workItem from="1583770233478" duration="1486000" />
+      <workItem from="1583799088274" duration="670000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="670000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1120" height="832" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -162,12 +279,21 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -178,5 +304,27 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSingle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding>
+            <marker date="1583799160580" expanded="false" signature="6:104" ph="..." />
+            <marker date="1583799160580" expanded="true" signature="146:1442" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="363:439" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="468:762" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="798:1059" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="862:1053" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="935:992" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="1108:1250" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="1154:1244" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="1298:1440" ph="{...}" />
+            <marker date="1583799160580" expanded="true" signature="1344:1434" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

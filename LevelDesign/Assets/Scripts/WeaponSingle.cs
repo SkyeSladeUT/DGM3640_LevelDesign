@@ -28,6 +28,7 @@ public class WeaponSingle : MonoBehaviour
 
     private IEnumerator GetBrick()
     {
+        Debug.Log("get Brick");
         while (inTrigger)
         {
             if (!player.hasBrick && Input.GetMouseButtonUp(0))
@@ -40,11 +41,7 @@ public class WeaponSingle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ground"))
-        {
-            GetComponent<BoxCollider>().enabled = true;
-        }
-        else if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             inTrigger = true;
             StartCoroutine(GetBrick());
@@ -53,11 +50,7 @@ public class WeaponSingle : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Ground"))
-        {
-            GetComponent<BoxCollider>().enabled = false;
-        }
-        else if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             inTrigger = false;
             StopCoroutine(GetBrick());
