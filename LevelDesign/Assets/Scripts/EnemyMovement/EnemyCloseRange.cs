@@ -15,7 +15,9 @@ public class EnemyCloseRange : MonoBehaviour
         if (other.CompareTag("Player")  && !enemy.stunned && Physics.Raycast(eyeline.transform.position, (player.transform.position - eyeline.transform.position), out hit, sightDistance))
         {
             if (hit.collider.CompareTag("Player"))
-                enemy.Attack();
+            {
+                enemy.Rotate();
+            }
         }
     }
 }

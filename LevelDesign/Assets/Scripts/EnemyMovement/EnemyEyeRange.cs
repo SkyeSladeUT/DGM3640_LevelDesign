@@ -20,7 +20,8 @@ public class EnemyEyeRange : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && !enemy.distracted)
-        {
+        {  
+            Debug.DrawLine(eyeline.transform.position, (player.transform.position - eyeline.transform.position)*sightDistance);
             if (Physics.Raycast(eyeline.transform.position, (player.transform.position - eyeline.transform.position), out hit, sightDistance))
             {
                 if (hit.collider.CompareTag("Player"))

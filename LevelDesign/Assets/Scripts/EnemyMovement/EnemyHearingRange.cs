@@ -22,9 +22,11 @@ public class EnemyHearingRange : MonoBehaviour
     {
         if (other.CompareTag("Brick"))
         {
+            Debug.Log("Brick Enter");
             brick = other.gameObject;
             if (!enemy.heardplayer && !brick.transform.parent.GetComponent<Brick>().thrown)
             {
+                Debug.Log("Brick Go To");
                 enemy.HearBrick(brick.transform.parent.transform);
             }
         }
@@ -38,9 +40,8 @@ public class EnemyHearingRange : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-            if (playerinRange)
+            if (playerinRange && !enemy.heardplayer)
             {
-                enemy.distracted = false;
                enemy.HearPlayer();
             } 
         /*if (other.CompareTag("Brick"))
@@ -55,6 +56,7 @@ public class EnemyHearingRange : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerinRange = false;
+            enemy.heardplayer = false;
         }
     }
 }

@@ -7,8 +7,8 @@ public class EnemyAttack : MonoBehaviour
     public GameObject menu;
     public GameObject player;
     public EnemyPatrol patrol;
-    [HideInInspector] public bool heardplayer;
-    [HideInInspector] public bool distracted, stunned;
+    public bool heardplayer;
+    public bool distracted, stunned;
     
     public void Attack()
     {
@@ -27,18 +27,25 @@ public class EnemyAttack : MonoBehaviour
             if (!player.GetComponent<PlayerMovement>().isCrouched && player.GetComponent<PlayerMovement>().moving)
             {
                 Debug.Log("heard player");
+                distracted = false;
                 heardplayer = true;
                 patrol.GoToDest(player.transform.position);
             }
-
-            heardplayer = false;
         }
     }
 
     public void HearBrick(Transform brick)
     {
-        if(!stunned)
+        if (!stunned)
+        {
+            Debug.Log("Go To Brick");
             patrol.GoToBrick(brick);
+        }
+    }
+
+    public void Rotate()
+    {
+        patrol.TurnTowards(player.transform);
     }
     
 }

@@ -3,24 +3,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UI;
 
 public class IncreaseCold : MonoBehaviour
 {
-    public float IncreaseAmount;
-    private float total;
-    public PostProcessVolume volume;
-    private Vignette vignette;
+    public float IncreaseSpeed;
+    public float TotalAmount;
+    public float StartChangeAmount;
+    public Image FrostImage;
+    public Vector3 origScale, finalScale;
+    public Color origColor, finalColor;
+    private float total, percent;
+    private bool increase, canDecrease;
 
     private void Start()
     {
         total = 0;
-        volume.profile.TryGetSettings(out vignette);
+        FrostImage.rectTransform.localScale = origScale;
+        FrostImage.color = origColor;
+        increase = true;
+        canDecrease = true;
+        StartCoroutine(ColdChange());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            increase = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            increase = true;
+        }
     }
 
     IEnumerator ColdChange()
     {
-        yield return new WaitForFixedUpdate();
+        while (canDecrease)
+        {
+            yield return new WaitForSeconds(.1f);
+            if (increase)
+            {
+                total += IncreaseSpeed * .1f;
+            }
+            else
+            {
+                total -= IncreaseSpeed * .1f*10;
+                if (total <= 0)
+                {
+                    total = 0;
+                }
+            }
+            if (total >= StartChangeAmount)
+            {
+
+                percent = (total - StartChangeAmount) / (TotalAmount - StartChangeAmount);
+                FrostImage.color = Color.Lerp(origColor, finalColor, percent);
+                FrostImage.rectTransform.localScale = Vector3.Lerp(origScale, finalScale, percent);
+            }
+            if (total >= TotalAmount)
+            {
+                Debug.Log("Game Over");
+            }
+        }
     }
-    
-     
 }

@@ -38,6 +38,7 @@ public class EnemyPatrol : MonoBehaviour
     public void StartPatrol()
     {
         onPatrol = true;
+        attack.distracted = false;
         if (destinations.Count > 1)
         {
             distance = Mathf.Sqrt(Mathf.Pow(transform.position.x + destinations[0].position.x, 2)
@@ -66,6 +67,7 @@ public class EnemyPatrol : MonoBehaviour
     private IEnumerator Patrol()
     {
         running = true;
+        attack.distracted = false;
         agent.destination = destinations[currentDest].position;
         while (onPatrol)
         {
@@ -214,6 +216,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator GoTowards(Vector3 target)
     {
+        attack.distracted = false;
         running = true;
         while (!CheckDest(.05f, target))
         {
@@ -246,6 +249,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public void Stun()
     {
+        Debug.Log("Stun");
         agent.speed = 0;
         StartCoroutine(StunTimer());
     }
