@@ -17,10 +17,10 @@ public class Break_Window : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         if (!broken && other.CompareTag("Brick"))
         {
-            Debug.Log("Break");
+            //Debug.Log("Break");
             broken = true;
             UnBrokenWindow.SetActive(false);
             BrokenWindow.SetActive(true);

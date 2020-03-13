@@ -29,8 +29,12 @@
           </e>
           <e p="EventScripts" t="Include">
             <e p="CollisionEvents.cs" t="Include" />
+            <e p="OnInteractEvents.cs" t="Include" />
             <e p="OnStartEvents.cs" t="Include" />
             <e p="TriggerEvents.cs" t="Include" />
+          </e>
+          <e p="Friend" t="Include">
+            <e p="Follow_Player_Movement.cs" t="Include" />
           </e>
           <e p="MenuEvents.cs" t="Include" />
           <e p="PlayerMovement" t="Include">
