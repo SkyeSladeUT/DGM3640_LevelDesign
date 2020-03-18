@@ -11,6 +11,7 @@ public class EnemyHearingRange : MonoBehaviour
     private GameObject brick;
     private bool playerinRange;
     public GameObject eyeline;
+    public bool HearThroughWalls = true;
 
     private void Start()
     {
@@ -40,15 +41,22 @@ public class EnemyHearingRange : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-            if (playerinRange && !enemy.heardplayer)
-            {
-               enemy.HearPlayer();
-            } 
-        /*if (other.CompareTag("Brick"))
+        if (playerinRange && !enemy.heardplayer)
         {
-            brick = other.gameObject;
-            Debug.DrawRay(eyeline.transform.position, (brick.transform.parent.transform.position - eyeline.transform.position)*hit.distance);
-        }*/
+            if (HearThroughWalls)
+                enemy.HearPlayer();
+            else
+            {
+                if (Physics.Raycast(eyeline.transform.position,
+                    (player.transform.position - eyeline.transform.position), out hit, hearingDistance))
+                {
+                    if (hit.collider.CompareTag("Player"))
+                    {
+                        enemy.HearPlayer();
+                    }
+                }
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)

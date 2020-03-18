@@ -21,6 +21,15 @@
             <e p="EnemyEyeRange.cs" t="Include" />
             <e p="EnemyHearingRange.cs" t="Include" />
             <e p="EnemyPatrol.cs" t="Include" />
+            <e p="EnemySitting.cs" t="Include" />
+            <e p="EnemySittingAttack.cs" t="Include" />
+            <e p="FollowRotation.cs" t="Include" />
+            <e p="SeatedCloseRange.cs" t="Include" />
+            <e p="SeatedHearingRange.cs" t="Include" />
+            <e p="SeatedSightRange.cs" t="Include" />
+            <e p="SittingCloseRange.cs" t="Include" />
+            <e p="SittingHearingRange.cs" t="Include" />
+            <e p="SittingSightRange.cs" t="Include" />
           </e>
           <e p="Environment" t="Include">
             <e p="Break_Window.cs" t="Include" />
@@ -46,6 +55,12 @@
           </e>
           <e p="WeaponPile.cs" t="Include" />
           <e p="WeaponSingle.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="MaxZOneLess.shader" t="Include" />
+          <e p="Normal_Diffuse.shader" t="Include" />
+          <e p="RefEqualOne.shader" t="Include" />
+          <e p="RefNotEqualOne.shader" t="Include" />
         </e>
         <e p="VFX" t="Include">
           <e p="Breath" t="Include">

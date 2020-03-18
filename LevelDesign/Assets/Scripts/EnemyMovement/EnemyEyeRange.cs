@@ -21,11 +21,16 @@ public class EnemyEyeRange : MonoBehaviour
     {
         if (other.CompareTag("Player") && !enemy.distracted)
         {  
-            Debug.DrawLine(eyeline.transform.position, (player.transform.position - eyeline.transform.position)*sightDistance);
+            //Debug.Log("Seen Player");
+            //Debug.DrawLine(eyeline.transform.position, (player.transform.position - eyeline.transform.position)*sightDistance);
             if (Physics.Raycast(eyeline.transform.position, (player.transform.position - eyeline.transform.position), out hit, sightDistance))
             {
+                //Debug.Log("Hit");
                 if (hit.collider.CompareTag("Player"))
+                {
+                    //Debug.Log("Hit Player");
                     enemy.Attack();
+                }
             }
         }
     }

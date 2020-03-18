@@ -8,9 +8,8 @@ using UnityEngine.Experimental.PlayerLoop;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController cc;
-    private bool canMove = true, canCrouch = true;
-    [HideInInspector]
-    public bool isCrouched = false, moving = false;
+    [HideInInspector]public bool canMove = true, canCrouch = true;
+    [HideInInspector] public bool isCrouched = false, moving = false;
     public MovementData moveData;
     private Vector3 movement, scale;
     private float gravity;

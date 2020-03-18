@@ -20,6 +20,7 @@ public class EnemyPatrol : MonoBehaviour
     private Quaternion lookRotation, origRot;
     public bool Patroling;
     public EnemyAttack attack;
+    public Animator anim;
     
 
     private void Awake()
@@ -33,8 +34,18 @@ public class EnemyPatrol : MonoBehaviour
         {
             StartPatrol();
         }
+        else
+        {
+            ResetTriggers();
+            anim.SetTrigger("LookAround");
+        }
     }
 
+    public void Freeze()
+    {
+        agent.speed = 0;
+    }
+    
     public void StartPatrol()
     {
         onPatrol = true;
@@ -66,6 +77,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator Patrol()
     {
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         running = true;
         attack.distracted = false;
         agent.destination = destinations[currentDest].position;
@@ -73,7 +86,11 @@ public class EnemyPatrol : MonoBehaviour
         {
             if (CheckDest(.05f, destinations[currentDest].position))
             {
+                ResetTriggers();
+                anim.SetTrigger("LookAround");
                 yield return new WaitForSeconds(waitSeconds);
+                ResetTriggers();
+                anim.SetTrigger("Walk");
                 currentDest++;
                 if (currentDest >= destinations.Count)
                     currentDest = 0;
@@ -128,7 +145,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator ReturnPos()
     {
-        //Debug.Log("Return to Position");
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         running = true;
         while (!CheckDest(.05f, origPos))
         {
@@ -141,13 +159,15 @@ public class EnemyPatrol : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, origRot, Time.deltaTime * rotationSpeed);
             yield return new WaitForFixedUpdate();
         }
-
+        ResetTriggers();
+        anim.SetTrigger("LookAround");
         running = false;
     }
 
     private IEnumerator RotateTowards(Transform target)
     {
-        //Debug.Log("Rotate Towards");
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         running = true;
         direction = (target.position - transform.position).normalized;
         while (!CheckRot(.05f, Quaternion.LookRotation(direction).eulerAngles))
@@ -174,7 +194,8 @@ public class EnemyPatrol : MonoBehaviour
 
     public void GoToBrick(Transform brickDest)
     {
-        //Debug.Log("Go to Brick");
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -183,7 +204,8 @@ public class EnemyPatrol : MonoBehaviour
 
     public void GoToDest(Vector3 newDest)
     {
-        //Debug.Log("Go To Destination");
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -192,7 +214,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator LookAtBrick(Transform target)
     {
-        //Debug.Log("Look at Brick");
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         running = true;
         while (!CheckDest(.05f, target.position))
         {
@@ -200,6 +223,8 @@ public class EnemyPatrol : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         attack.distracted = true;
+        ResetTriggers();
+        anim.SetTrigger("Idle");
         yield return new WaitForSeconds(waitSeconds);
         attack.distracted = false;
         if (Patroling)
@@ -216,6 +241,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator GoTowards(Vector3 target)
     {
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         attack.distracted = false;
         running = true;
         while (!CheckDest(.05f, target))
@@ -223,6 +250,8 @@ public class EnemyPatrol : MonoBehaviour
             agent.SetDestination(target);
             yield return new WaitForFixedUpdate();
         }
+        ResetTriggers();
+        anim.SetTrigger("LookAround");
         yield return new WaitForSeconds(waitSeconds);
         attack.heardplayer = false;
         if (Patroling)
@@ -239,16 +268,14 @@ public class EnemyPatrol : MonoBehaviour
 
     public void LookAround()
     {
-        
-    }
-
-    public void LookUp()
-    {
-        
+        ResetTriggers();
+        anim.SetTrigger("LookAround");
     }
 
     public void Stun()
     {
+        ResetTriggers();
+        anim.SetTrigger("Hit");
         Debug.Log("Stun");
         agent.speed = 0;
         StartCoroutine(StunTimer());
@@ -257,13 +284,24 @@ public class EnemyPatrol : MonoBehaviour
     public IEnumerator StunTimer()
     {
         running = true;
-        //Debug.Log("Stunned");
         attack.stunned = true;
         yield return new WaitForSeconds(stunTime);
-        //Debug.Log("UnStunned");
+        ResetTriggers();
+        anim.SetTrigger("StandUp");
+        yield return new WaitForSeconds(.5f);
         attack.stunned = false;
         agent.speed = speed;
         running = false;
+    }
+
+    private void ResetTriggers()
+    {
+        anim.ResetTrigger("Walk");
+        anim.ResetTrigger("Idle");
+        anim.ResetTrigger("LookAround");
+        anim.ResetTrigger("Gun");
+        anim.ResetTrigger("Hit");
+        anim.ResetTrigger("StandUp");
     }
     
 }
