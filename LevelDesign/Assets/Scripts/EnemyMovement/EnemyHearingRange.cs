@@ -12,6 +12,8 @@ public class EnemyHearingRange : MonoBehaviour
     private bool playerinRange;
     public GameObject eyeline;
     public bool HearThroughWalls = true;
+    private Brick brickScript;
+    private Transform brickTrans;
 
     private void Start()
     {
@@ -25,10 +27,17 @@ public class EnemyHearingRange : MonoBehaviour
         {
             Debug.Log("Brick Enter");
             brick = other.gameObject;
-            if (!enemy.heardplayer && !brick.transform.parent.GetComponent<Brick>().thrown)
+            brickScript = brick.transform.GetComponent<Brick>();
+            brickTrans = brick.transform;
+            if (brickScript == null)
+            {
+                brickScript = brick.transform.parent.GetComponent<Brick>();
+                brickTrans = brick.transform.parent.transform;
+            }
+            if (!enemy.heardplayer && !brickScript.thrown)
             {
                 Debug.Log("Brick Go To");
-                enemy.HearBrick(brick.transform.parent.transform);
+                enemy.HearBrick(brickTrans);
             }
         }
 
@@ -41,7 +50,7 @@ public class EnemyHearingRange : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (playerinRange && !enemy.heardplayer)
+        if (playerinRange && !enemy.heardplayer && !enemy.distracted)
         {
             if (HearThroughWalls)
                 enemy.HearPlayer();

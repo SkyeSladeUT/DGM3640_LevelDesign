@@ -10,9 +10,11 @@ public class Door_Rotate : MonoBehaviour
     public float RotateAmount, Speed;
     private bool open, inRange, running;
     private float rotateAmount, totalRotateAmount, partialRotate;
+    private WaitForFixedUpdate _fixedUpdate;
 
     private void Start()
     {
+        _fixedUpdate = new WaitForFixedUpdate();
         open = false;
         running = false;
     }
@@ -42,10 +44,12 @@ public class Door_Rotate : MonoBehaviour
     {
         while (inRange)
         {
+            //Debug.Log("In Range");
             if (Input.GetButtonDown("Interact"))
             {
                 if (open)
                 {
+                    //Debug.Log("Open");
                     rotateAmount = RotateAmount;
                     open = false;
                 }
@@ -61,12 +65,12 @@ public class Door_Rotate : MonoBehaviour
                     partialRotate = rotateAmount * Speed * Time.deltaTime;
                     transform.RotateAround(Hinge.transform.position, Vector3.up, partialRotate);
                     totalRotateAmount += partialRotate;
-                    yield return new WaitForFixedUpdate();
+                    yield return _fixedUpdate;
                 }
             }
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
-
+        //Debug.Log("Finish");
         running = false;
     }
 }

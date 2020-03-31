@@ -11,8 +11,15 @@ public class CameraMovement : MonoBehaviour
     private float x, y;
     public float CamSpeed;
     public float sensitivity;
+    private WaitForFixedUpdate _fixedUpdate;
 
-    private void Start()
+    private void Awake()
+    {
+        Screen.lockCursor = true;
+        _fixedUpdate = new WaitForFixedUpdate();
+    }
+
+    public void Initialize()
     {
         offset = transform.position - followObj.position;
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,9 +39,8 @@ public class CameraMovement : MonoBehaviour
             rotation.y += x * CamSpeed;
             rotation.z = 0;
             quat = Quaternion.Euler(rotation);
-            //transform.rotation = quat;
             transform.rotation = Quaternion.Lerp(transform.rotation, quat, sensitivity*Time.deltaTime);
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 }

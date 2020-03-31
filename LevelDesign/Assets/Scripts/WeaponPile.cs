@@ -12,9 +12,11 @@ public class WeaponPile : MonoBehaviour
     public Transform parent;
     private bool inTrigger;
     public UnityEvent OnGrab;
+    private WaitForFixedUpdate _fixedUpdate;
 
     private void Start()
     {
+        _fixedUpdate = new WaitForFixedUpdate();
         player.hasBrick = false;
         player.brickRB = null;
     }
@@ -25,6 +27,7 @@ public class WeaponPile : MonoBehaviour
         weaponInstance.transform.SetParent(parent);
         weaponInstance.transform.position = weaponSpawnPoint.transform.position;
         weaponInstance.transform.rotation = weaponSpawnPoint.transform.rotation;
+        weaponInstance.transform.localScale = weaponSpawnPoint.transform.localScale;
         player.grabBrick(weaponInstance);
         OnGrab.Invoke();
     }
@@ -37,7 +40,7 @@ public class WeaponPile : MonoBehaviour
             {
                 GetWeapon();
             }
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 

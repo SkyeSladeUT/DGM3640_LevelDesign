@@ -10,9 +10,11 @@ public class WeaponSingle : MonoBehaviour
     public Transform parent;
     private bool inTrigger;
     public UnityEvent OnGrab;
+    private WaitForFixedUpdate _fixedUpdate;
 
     private void Start()
     {
+        _fixedUpdate = new WaitForFixedUpdate();
         player.hasBrick = false;
         player.brickRB = null;
     }
@@ -35,7 +37,7 @@ public class WeaponSingle : MonoBehaviour
             {
                 GetWeapon();
             }
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 

@@ -15,8 +15,14 @@ public class IncreaseCold : MonoBehaviour
     public Color origColor, finalColor;
     private float total, percent;
     private bool increase, canDecrease;
+    private WaitForSeconds waittime;
 
-    private void Start()
+    private void Awake()
+    {
+        waittime = new WaitForSeconds(.1f);
+    }
+
+    public void Initialize()
     {
         total = 0;
         FrostImage.rectTransform.localScale = origScale;
@@ -46,7 +52,7 @@ public class IncreaseCold : MonoBehaviour
     {
         while (canDecrease)
         {
-            yield return new WaitForSeconds(.1f);
+            yield return waittime;
             if (increase)
             {
                 total += IncreaseSpeed * .1f;

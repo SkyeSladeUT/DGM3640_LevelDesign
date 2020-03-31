@@ -9,7 +9,6 @@ public class OnStartEvents : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1;
         OnStart.Invoke();
     }
 }

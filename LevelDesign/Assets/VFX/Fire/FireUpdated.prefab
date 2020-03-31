@@ -4650,7 +4650,7 @@ ParticleSystem:
   m_GameObject: {fileID: 490022396}
   serializedVersion: 6
   lengthInSec: 5
-  simulationSpeed: 0.5
+  simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
@@ -9340,7 +9340,7 @@ ParticleSystem:
   m_GameObject: {fileID: 603867543}
   serializedVersion: 6
   lengthInSec: 5
-  simulationSpeed: 0.5
+  simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -14060,7 +14060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039587c051912eb4ead9e58344c5f3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 2
+  multiplier: 1
 --- !u!1 &669382699
 GameObject:
   m_ObjectHideFlags: 0
@@ -18972,7 +18972,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1640524061}
   serializedVersion: 6
   lengthInSec: 2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.75
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
@@ -19036,7 +19036,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
   randomSeed: 0
@@ -19830,7 +19830,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -23592,7 +23592,7 @@ ParticleSystemRenderer:
   m_RenderMode: 3
   m_SortMode: 1
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.45
+  m_MaxParticleSize: 9999999
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -23655,8 +23655,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 0.5992406, b: 0.27405927, a: 1}
-  m_Intensity: 2
-  m_Range: 3.8904648
+  m_Intensity: 6.82
+  m_Range: 6.46
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -23692,7 +23692,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 40759
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -23716,6 +23716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723274b822865ed4d9ed2a504c0ca79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 5
+  MoveIntensity: 25
 --- !u!1 &2064968822
 GameObject:
   m_ObjectHideFlags: 0

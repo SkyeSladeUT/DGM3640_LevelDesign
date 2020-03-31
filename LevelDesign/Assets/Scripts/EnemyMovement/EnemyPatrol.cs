@@ -1,8 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using Cinemachine.Utility;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,16 +11,27 @@ public class EnemyPatrol : MonoBehaviour
     private bool onPatrol, running;
     private int currentDest;
     private float distance;
-    public float waitSeconds, stunTime;
+    public float waitSeconds, stunTime, bricktime;
     public float speed, rotationSpeed;
     private Vector3 direction, origPos;
     private Quaternion lookRotation, origRot;
     public bool Patroling;
     public EnemyAttack attack;
     public Animator anim;
-    
+    private WaitForFixedUpdate fixedUpdateWait;
+    private WaitForSeconds lookTimeWait, stunTimeWait, delayWait, bricktimewait;
+
 
     private void Awake()
+    {
+        fixedUpdateWait = new WaitForFixedUpdate();
+        lookTimeWait = new WaitForSeconds(waitSeconds);
+        stunTimeWait = new WaitForSeconds(stunTime);
+        delayWait = new WaitForSeconds(.5f);
+        bricktimewait = new WaitForSeconds(bricktime);
+    }
+
+    public void Initialize()
     {
         running = false;
         origPos = transform.position;
@@ -88,17 +96,16 @@ public class EnemyPatrol : MonoBehaviour
             {
                 ResetTriggers();
                 anim.SetTrigger("LookAround");
-                yield return new WaitForSeconds(waitSeconds);
+                yield return lookTimeWait;
                 ResetTriggers();
                 anim.SetTrigger("Walk");
                 currentDest++;
                 if (currentDest >= destinations.Count)
                     currentDest = 0;
-                //Debug.Log("Swap Dest, Current Dest: " + currentDest);
             }
 
             agent.destination = destinations[currentDest].position;
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
 
         running = false;
@@ -151,13 +158,13 @@ public class EnemyPatrol : MonoBehaviour
         while (!CheckDest(.05f, origPos))
         {
             agent.destination = origPos;
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
 
         while (!CheckRot(.05f, origRot.eulerAngles))
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, origRot, Time.deltaTime * rotationSpeed);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
         ResetTriggers();
         anim.SetTrigger("LookAround");
@@ -175,10 +182,10 @@ public class EnemyPatrol : MonoBehaviour
             direction = (target.position - transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
         transform.rotation = lookRotation;
-        yield return new WaitForSeconds(waitSeconds);
+        yield return lookTimeWait;
         if (Patroling)
         {
             running = false;
@@ -220,12 +227,12 @@ public class EnemyPatrol : MonoBehaviour
         while (!CheckDest(.05f, target.position))
         {
             agent.SetDestination(target.position);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
         attack.distracted = true;
         ResetTriggers();
         anim.SetTrigger("Idle");
-        yield return new WaitForSeconds(waitSeconds);
+        yield return bricktimewait;
         attack.distracted = false;
         if (Patroling)
         {
@@ -248,11 +255,11 @@ public class EnemyPatrol : MonoBehaviour
         while (!CheckDest(.05f, target))
         {
             agent.SetDestination(target);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
         ResetTriggers();
         anim.SetTrigger("LookAround");
-        yield return new WaitForSeconds(waitSeconds);
+        yield return lookTimeWait;
         attack.heardplayer = false;
         if (Patroling)
         {
@@ -285,10 +292,10 @@ public class EnemyPatrol : MonoBehaviour
     {
         running = true;
         attack.stunned = true;
-        yield return new WaitForSeconds(stunTime);
+        yield return stunTimeWait;
         ResetTriggers();
         anim.SetTrigger("StandUp");
-        yield return new WaitForSeconds(.5f);
+        yield return delayWait;
         attack.stunned = false;
         agent.speed = speed;
         running = false;

@@ -5,20 +5,25 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public GameObject menu;
-    public GameObject player;
+    public GameObject player, playerCam;
     public EnemyPatrol patrol;
     public bool heardplayer;
     public bool distracted, stunned;
     public Animator anim;
     public float deathTime;
     private PlayerMovement pm;
-    private bool running;
+    private bool running, end;
     private Vector3 direction;
     private Quaternion lookRotation;
+    private WaitForFixedUpdate fixedUpdateWait;
+    private WaitForSeconds deathTimeWait;
+    public CameraAnimation camAnim;
     
 
     private void Start()
     {
+        fixedUpdateWait = new WaitForFixedUpdate();
+        deathTimeWait = new WaitForSeconds(deathTime);
         pm = player.GetComponent<PlayerMovement>();
         running = false;
     }
@@ -27,6 +32,8 @@ public class EnemyAttack : MonoBehaviour
     {
         if (!distracted && !stunned)
         {
+            ResetTriggers();
+            anim.SetTrigger("Gun");
             patrol.Freeze();
             pm.canMove = false;
             if(!running)
@@ -36,17 +43,36 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackFun()
     {
-        ResetTriggers();
-        anim.SetTrigger("Gun");
-        //Time.timeScale = .5f;
-        yield return new WaitForSeconds(deathTime);
+
+        end = false;
+        StartCoroutine(RotatePlayer());
+        end = true;
+        yield return deathTimeWait;
+        camAnim.Death();
+        yield return deathTimeWait;
         Time.timeScale = 0;
         menu.SetActive(true);
     }
 
+    private IEnumerator RotatePlayer()
+    {
+        ResetTriggers();
+        anim.SetTrigger("Walk");
+        running = true;
+        direction = (transform.position - playerCam.transform.position).normalized;
+        while (!CheckRot(.05f, Quaternion.LookRotation(direction).eulerAngles) && !end)
+        {
+            direction = (transform.position - playerCam.transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            playerCam.transform.rotation = Quaternion.Slerp(playerCam.transform.rotation, lookRotation, Time.deltaTime * 5);
+            yield return fixedUpdateWait;
+        }
+        playerCam.transform.rotation = lookRotation;
+    }
+
     public void HearPlayer()
     {
-        if (!stunned && !heardplayer)
+        if (!stunned && !heardplayer && !distracted)
         {
             if (!pm.isCrouched && player.GetComponent<PlayerMovement>().moving)
             {
@@ -95,7 +121,7 @@ public class EnemyAttack : MonoBehaviour
             direction = (target.position - transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation,  1);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateWait;
         }
         transform.rotation = lookRotation;
         StartCoroutine(AttackFun());

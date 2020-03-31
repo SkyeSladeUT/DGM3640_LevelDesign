@@ -7,8 +7,14 @@ public class PlayerRotation : MonoBehaviour
     private Vector3 rotation;
     private Quaternion quat;
     private bool canRotate = true;
+    private WaitForFixedUpdate _fixedUpdate;
 
-    private void Start()
+    private void Awake()
+    {
+        _fixedUpdate = new WaitForFixedUpdate();
+    }
+
+    public void Initialize()
     {
         rotation = transform.rotation.eulerAngles;
         rotation.y = rotFollow.rotation.eulerAngles.y;
@@ -25,7 +31,7 @@ public class PlayerRotation : MonoBehaviour
             rotation.y = rotFollow.rotation.eulerAngles.y;
             quat = Quaternion.Euler(rotation);
             transform.rotation = quat;
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 }

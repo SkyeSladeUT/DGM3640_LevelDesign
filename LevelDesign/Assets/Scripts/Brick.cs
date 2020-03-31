@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    [HideInInspector] 
+    //[HideInInspector] 
     public bool thrown = false;
-    [HideInInspector]
+    //[HideInInspector]
     public bool inHand = true;
 
     private void OnCollisionEnter(Collision other)

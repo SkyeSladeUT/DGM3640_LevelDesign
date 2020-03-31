@@ -5,21 +5,32 @@ using UnityEngine;
 public class EnemySittingAttack : MonoBehaviour
 {
     public GameObject menu;
-    public GameObject player;
+    public GameObject player, playerCam;
     public bool heardplayer;
     public bool distracted, stunned;
     public Animator anim;
     public float deathTime;
     private PlayerMovement pm;
-    private bool running;
+    private bool running, end;
     private Vector3 direction;
     private Quaternion lookRotation;
     public GameObject HeadRotateJoint;
     public float lookTime, rotationSpeed, stunTime;
     private Quaternion origRot;
-    
+    private WaitForSeconds stunTimeWait, lookTimeWait, delayTime, deathTimeWait;
+    private WaitForFixedUpdate fixedUpdateTime;
+    public CameraAnimation camAnim;
 
-    private void Start()
+    private void Awake()
+    {
+        stunTimeWait = new WaitForSeconds(stunTime);
+        lookTimeWait = new WaitForSeconds(lookTime);
+        delayTime = new WaitForSeconds(.5f);
+        deathTimeWait = new WaitForSeconds(deathTime);
+        fixedUpdateTime = new WaitForFixedUpdate();
+    }
+
+    public void Initialize()
     {
         origRot = HeadRotateJoint.transform.rotation;
         pm = player.GetComponent<PlayerMovement>();
@@ -41,10 +52,10 @@ public class EnemySittingAttack : MonoBehaviour
     {
         running = true;
         stunned = true;
-        yield return new WaitForSeconds(stunTime);
+        yield return stunTimeWait;
         ResetTriggers();
         anim.SetTrigger("EndHit");
-        yield return new WaitForSeconds(.5f);
+        yield return delayTime;
         stunned = false;
         running = false;
     }
@@ -63,9 +74,30 @@ public class EnemySittingAttack : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Gun");
-        yield return new WaitForSeconds(deathTime);
+        end = false;
+        StartCoroutine(RotatePlayer());
+        yield return deathTimeWait;
+        end = true;
+        camAnim.Death();
+        yield return deathTimeWait;
         Time.timeScale = 0;
         menu.SetActive(true);
+    }
+    
+    private IEnumerator RotatePlayer()
+    {
+        ResetTriggers();
+        anim.SetTrigger("Walk");
+        running = true;
+        direction = (transform.position - playerCam.transform.position).normalized;
+        while (!CheckRot(.05f, Quaternion.LookRotation(direction).eulerAngles) && !end)
+        {
+            direction = (transform.position - playerCam.transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            playerCam.transform.rotation = Quaternion.Slerp(playerCam.transform.rotation, lookRotation, Time.deltaTime * 5);
+            yield return fixedUpdateTime;
+        }
+        playerCam.transform.rotation = lookRotation;
     }
 
     public void HearPlayer()
@@ -114,10 +146,10 @@ public class EnemySittingAttack : MonoBehaviour
             direction = (lookObj.position - HeadRotateJoint.transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
             HeadRotateJoint.transform.rotation = Quaternion.Slerp(HeadRotateJoint.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateTime;
         }
         HeadRotateJoint.transform.rotation = lookRotation;
-        yield return new WaitForSeconds(lookTime);
+        yield return lookTimeWait;
         anim.enabled = true;
         anim.speed = 1;
         running = false;
@@ -139,10 +171,10 @@ public class EnemySittingAttack : MonoBehaviour
             direction = (lookObj.position - HeadRotateJoint.transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
             HeadRotateJoint.transform.rotation = Quaternion.Slerp(HeadRotateJoint.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-            yield return new WaitForFixedUpdate();
+            yield return fixedUpdateTime;
         }
         HeadRotateJoint.transform.rotation = lookRotation;
-        yield return new WaitForSeconds(lookTime);
+        yield return lookTimeWait;
         Debug.Log("End Look At");
         distracted = false;
         anim.enabled = true;

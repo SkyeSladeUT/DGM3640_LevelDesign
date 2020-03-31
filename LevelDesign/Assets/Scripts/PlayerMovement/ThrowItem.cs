@@ -12,10 +12,14 @@ public class ThrowItem : MonoBehaviour
     public float forceMin, forceMax, changeSpeed;
     private Vector3 forceDirection;
     public Image forceImage;
+    private WaitForSeconds delayTime;
+    private Brick brick;
+    private WaitForFixedUpdate _fixedUpdate;
 
     private void Start()
     {
-        //hasBrick.value = false;
+        delayTime = new WaitForSeconds(.1f);
+        _fixedUpdate = new WaitForFixedUpdate();
         forceSet = false;
     }
 
@@ -26,8 +30,10 @@ public class ThrowItem : MonoBehaviour
 
     private IEnumerator Throw()
     {
+        brick = player.brickRB.gameObject.GetComponent<Brick>();
         while (player.hasBrick)
         {
+            brick.thrown = false;
             if (Input.GetMouseButtonDown(0))
             {
                 forceSet = true;
@@ -43,8 +49,8 @@ public class ThrowItem : MonoBehaviour
                         player.brickRB.transform.parent = null;
                         player.brickRB.constraints = RigidbodyConstraints.None;
                         player.brickRB.AddForce(forceDirection, ForceMode.Impulse);
-                        yield return new WaitForSeconds(.1f);
-                        player.brickRB.gameObject.GetComponent<Brick>().inHand = false;
+                        yield return delayTime;
+                        brick.inHand = false;
                         player.throwBrick();
                         forceImage.fillAmount = 0;
                     }
@@ -66,7 +72,7 @@ public class ThrowItem : MonoBehaviour
                         forceImage.fillAmount = (forceAmount - forceMin) / (forceMax - forceMin);
                     }
 
-                    yield return new WaitForFixedUpdate();
+                    yield return _fixedUpdate;
                     
                 }
             }
@@ -77,7 +83,7 @@ public class ThrowItem : MonoBehaviour
                 player.brickRB.gameObject.GetComponent<Brick>().inHand = false;
                 player.throwBrick();
             }
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 
@@ -102,7 +108,7 @@ public class ThrowItem : MonoBehaviour
 
             forceImage.fillAmount = (forceAmount-forceMin) / (forceMax-forceMin);
             
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
     

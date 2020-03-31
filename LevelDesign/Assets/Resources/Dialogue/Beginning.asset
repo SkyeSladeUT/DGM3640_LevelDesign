@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e2152fa98615a4f9b0b9455ef57edb, type: 3}
+  m_Name: Beginning
+  m_EditorClassIdentifier: 
+  name: You
+  lines:
+  - Where is Zach? I've been waiting forev... wait, here's a text from him.
+  - '"Hey man, may have gotten mixed up in a bit of gang trouble.'
+  - '"being held captive in their apartment, and could really use help.'
+  - '"don''t know what they''re planning on doing, please hurry."'
+  - Ugh, really Zach, I've warned you about getting mixed up with this kind of stuff.
+  - well, guess I've got to head out and get him.

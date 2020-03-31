@@ -14,9 +14,15 @@ public class Follow_Player_Movement : MonoBehaviour
     private NavMeshAgent _agent;
     private bool following, crouched;
     private Vector3 dest;
+    private WaitForSeconds crouchTimeWait, uncrouchTimeWait, standTimeWait;
+    private WaitForFixedUpdate fixedUpdateWait;
 
     private void Start()
     {
+        crouchTimeWait = new WaitForSeconds(CrouchTime);
+        uncrouchTimeWait = new WaitForSeconds(CrouchStandTime);
+        standTimeWait = new WaitForSeconds(StandTime);
+        fixedUpdateWait = new WaitForFixedUpdate();
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = 0;
         _playerMovement = Player.GetComponent<PlayerMovement>();
@@ -30,7 +36,7 @@ public class Follow_Player_Movement : MonoBehaviour
 
     IEnumerator WaitStart()
     {
-        yield return new WaitForSeconds(StandTime);
+        yield return standTimeWait;
         StartFollow();
     }
     
@@ -58,7 +64,7 @@ public class Follow_Player_Movement : MonoBehaviour
                 anim.ResetTrigger("Sneak_Start");
                 anim.SetTrigger("Crouch");
                 _agent.speed = 0;
-                yield return new WaitForSeconds(CrouchTime);
+                yield return crouchTimeWait;
                 crouched = true;
             }
             else if (!_playerMovement.isCrouched && crouched)
@@ -70,7 +76,7 @@ public class Follow_Player_Movement : MonoBehaviour
                 anim.ResetTrigger("Sneak_Start");
                 anim.SetTrigger("Stand");
                 _agent.speed = 0;
-                yield return new WaitForSeconds(CrouchStandTime);
+                yield return uncrouchTimeWait;
                 crouched = false;
             }
 
@@ -120,7 +126,8 @@ public class Follow_Player_Movement : MonoBehaviour
                     _agent.speed = WalkSpeed;
                 }
             }
-            yield return new WaitForFixedUpdate();
+
+            yield return fixedUpdateWait;
         }
     }
 

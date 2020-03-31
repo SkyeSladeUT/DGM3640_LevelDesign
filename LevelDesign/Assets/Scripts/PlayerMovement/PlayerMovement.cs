@@ -11,17 +11,30 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]public bool canMove = true, canCrouch = true;
     [HideInInspector] public bool isCrouched = false, moving = false;
     public MovementData moveData;
-    private Vector3 movement, scale;
+    private Vector3 movement, scale, brickOrig, brickShrunk;
     private float gravity;
     public float gravitySpeed;
     private float origHeight, shrunkHeight;
     public float CrouchDecrease;
+    private WaitForFixedUpdate _fixedUpdate;
+    public Transform brickHold;
 
-    private void Start()
+    private void Awake()
     {
+        _fixedUpdate = new WaitForFixedUpdate();
+    }
+
+    public void Initialize()
+    {
+        canMove = true;
         cc = GetComponent<CharacterController>();
         StartCoroutine(Move());
         StartCoroutine(Crouch());
+    }
+
+    public void Stop()
+    {
+        canMove = false;
     }
 
     public void SwapData(MovementData newData)
@@ -38,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y -= gravity;
         cc.Move(movement); 
         gravity = 0;
-        yield return  new WaitForFixedUpdate();
+        yield return _fixedUpdate;
         while (canMove)
         {
             movement = transform.forward*moveData.ForwardSpeed.GetFloat()*Time.deltaTime
@@ -68,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             cc.Move(movement);   
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 
@@ -91,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
                 scale.y = origHeight;
             }
             transform.localScale = scale;
-            yield return new WaitForFixedUpdate();
+            yield return _fixedUpdate;
         }
     }
 }
