@@ -11,13 +11,13 @@ public class ControlMenu : MonoBehaviour
 
     private void Awake()
     {
-        open = false;
         ControlsObj.SetActive(false);
+        open = false;
     }
 
     public void StartCheck()
     {
-        open = false;
+        open = true;
         Time.timeScale = 0;
         ControlsObj.SetActive(true);
     }

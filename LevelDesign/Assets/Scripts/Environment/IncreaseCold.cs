@@ -15,11 +15,14 @@ public class IncreaseCold : MonoBehaviour
     public Color origColor, finalColor;
     private float total, percent;
     private bool increase, canDecrease;
-    private WaitForSeconds waittime;
+    private WaitForSeconds waittime, deathTimeWait;
+    public CameraAnimation camAnim;
+    public GameObject menu;
 
     private void Awake()
     {
         waittime = new WaitForSeconds(.1f);
+        deathTimeWait = new WaitForSeconds(1f);
     }
 
     public void Initialize()
@@ -74,7 +77,10 @@ public class IncreaseCold : MonoBehaviour
             }
             if (total >= TotalAmount)
             {
-                Debug.Log("Game Over");
+                camAnim.Death();
+                yield return deathTimeWait;
+                Time.timeScale = 0;
+                menu.SetActive(true);
             }
         }
     }

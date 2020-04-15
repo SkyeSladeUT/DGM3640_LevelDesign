@@ -13,6 +13,11 @@ public class PauseMenu : MonoBehaviour
     private int currentSelection;
     private bool open;
 
+    private void Awake()
+    {
+        open = false;
+    }
+
     public void Open()
     {
         Time.timeScale = 0;
@@ -35,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (Input.GetButtonDown("Vertical") || Input.GetButtonDown("Horizontal"))
             {
-                if (Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Horizontal") < 0)
+                if (Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Horizontal") > 0)
                 {
                     menuOptions[currentSelection].color = initColor;
                     currentSelection++;
@@ -46,7 +51,7 @@ public class PauseMenu : MonoBehaviour
 
                     menuOptions[currentSelection].color = selectedColor;
                 }
-                else if (Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Horizontal") > 0)
+                else if (Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Horizontal") < 0)
                 {
                     menuOptions[currentSelection].color = initColor;
                     currentSelection--;
@@ -62,17 +67,16 @@ public class PauseMenu : MonoBehaviour
             {
                 menuEvents[currentSelection].Invoke();
             }
-            if (Input.GetButtonUp("Pause"))
+
+            if (Input.GetButtonDown("Pause"))
             {
-                Debug.Log("Close");
                 Close();
             }
         }
         else
         {
-            if (Input.GetButtonUp("Pause"))
+            if (Input.GetButtonDown("Pause"))
             {
-                Debug.Log("Open");
                 Open();
             }
         }

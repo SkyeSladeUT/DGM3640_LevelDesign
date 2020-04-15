@@ -9,9 +9,15 @@
           <e p="EnemyEarRange.cs" t="Include" />
           <e p="EnemyEyeline.cs" t="Include" />
         </e>
+        <e p="PaperMovement.cs" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="ThirdPersonMovementJump.cs" t="Include" />
+          <e p="Waitforevent.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Brick.cs" t="Include" />
           <e p="ControlMenu.cs" t="Include" />
+          <e p="ControlMenu1.cs" t="Include" />
           <e p="Data" t="Include">
             <e p="BoolData.cs" t="Include" />
             <e p="FloatData.cs" t="Include" />
@@ -45,6 +51,7 @@
             <e p="Break_Window.cs" t="Include" />
             <e p="Door_Rotate.cs" t="Include" />
             <e p="IncreaseCold.cs" t="Include" />
+            <e p="LightFlicker.cs" t="Include" />
           </e>
           <e p="EventScripts" t="Include">
             <e p="ChangeScene.cs" t="Include" />
@@ -62,6 +69,7 @@
           </e>
           <e p="MainMenu.cs" t="Include" />
           <e p="MenuEvents.cs" t="Include" />
+          <e p="ParticleRotation.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="PlayerMovement" t="Include">
             <e p="CameraAnimation.cs" t="Include" />

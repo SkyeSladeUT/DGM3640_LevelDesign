@@ -45,6 +45,7 @@ public class WeaponSingle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("in Trigger");
             inTrigger = true;
             StartCoroutine(GetBrick());
         }
@@ -54,6 +55,8 @@ public class WeaponSingle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Exit Trigger");
+
             inTrigger = false;
             StopCoroutine(GetBrick());
         }

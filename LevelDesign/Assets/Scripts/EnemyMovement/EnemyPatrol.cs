@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Experimental.PlayerLoop;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyPatrol : MonoBehaviour
@@ -11,7 +13,7 @@ public class EnemyPatrol : MonoBehaviour
     private bool onPatrol, running;
     private int currentDest;
     private float distance;
-    public float waitSeconds, stunTime, bricktime;
+    public float waitSeconds, stunTime, bricktime, scale;
     public float speed, rotationSpeed;
     private Vector3 direction, origPos;
     private Quaternion lookRotation, origRot;
@@ -86,6 +88,26 @@ public class EnemyPatrol : MonoBehaviour
     private IEnumerator Patrol()
     {
         ResetTriggers();
+        agent.updateRotation = false;
+        direction = (destinations[currentDest].position - transform.position).normalized;
+        if (GetRotateDirection(transform.rotation.eulerAngles, destinations[currentDest].position - transform.position))
+        {
+            anim.SetTrigger("TurnLeft");
+        }
+        else
+        {
+            anim.SetTrigger("TurnRight");
+        }
+        scale = 1;
+        while (!CheckRot(1f, Quaternion.LookRotation(direction).eulerAngles))
+        {
+            direction = (destinations[currentDest].position - transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed * scale);
+            scale += Time.deltaTime;
+            yield return fixedUpdateWait;
+        }        
+        ResetTriggers();
         anim.SetTrigger("Walk");
         running = true;
         attack.distracted = false;
@@ -97,11 +119,36 @@ public class EnemyPatrol : MonoBehaviour
                 ResetTriggers();
                 anim.SetTrigger("LookAround");
                 yield return lookTimeWait;
-                ResetTriggers();
-                anim.SetTrigger("Walk");
                 currentDest++;
                 if (currentDest >= destinations.Count)
                     currentDest = 0;
+                 ResetTriggers();
+                anim.SetTrigger("TurnLeft");
+                agent.updateRotation = false;
+                direction = (destinations[currentDest].position - transform.position).normalized;
+                scale = 1;
+                if (GetRotateDirection(transform.rotation.eulerAngles, destinations[currentDest].position - transform.position))
+                {
+                    //Debug.Log("Left");
+                    anim.SetTrigger("TurnLeft");
+                }
+                else
+                {
+                    //Debug.Log("Right");
+                    anim.SetTrigger("TurnRight");
+                }
+                while (!CheckRot(1f, Quaternion.LookRotation(direction).eulerAngles))
+                {
+                    direction = (destinations[currentDest].position - transform.position).normalized;
+                    lookRotation = Quaternion.LookRotation(direction);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed * scale);
+                    scale += Time.deltaTime*2;
+                    yield return fixedUpdateWait;
+                }
+                agent.updateRotation = true;
+                ResetTriggers();
+                anim.SetTrigger("Walk");
+
             }
 
             agent.destination = destinations[currentDest].position;
@@ -153,19 +200,43 @@ public class EnemyPatrol : MonoBehaviour
     private IEnumerator ReturnPos()
     {
         ResetTriggers();
-        anim.SetTrigger("Walk");
         running = true;
+        direction = (origPos - transform.position).normalized;
+        if (GetRotateDirection(transform.rotation.eulerAngles, origPos - transform.position))
+        {
+            //Debug.Log("Left");
+            anim.SetTrigger("TurnLeft");
+        }
+        else
+        {
+            //Debug.Log("Right");
+            anim.SetTrigger("TurnRight");
+        }
+        agent.updateRotation = false;
+        while (!CheckRot(.2f, Quaternion.LookRotation(direction).eulerAngles))
+        {
+            direction = (origPos - transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+            yield return fixedUpdateWait;
+        }
+
+        agent.updateRotation = true;
+        ResetTriggers();
+        anim.SetTrigger("Walk");
         while (!CheckDest(.05f, origPos))
         {
             agent.destination = origPos;
             yield return fixedUpdateWait;
         }
 
+        agent.updateRotation = false;
         while (!CheckRot(.05f, origRot.eulerAngles))
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, origRot, Time.deltaTime * rotationSpeed);
             yield return fixedUpdateWait;
         }
+        agent.updateRotation = true;
         ResetTriggers();
         anim.SetTrigger("LookAround");
         running = false;
@@ -174,10 +245,21 @@ public class EnemyPatrol : MonoBehaviour
     private IEnumerator RotateTowards(Transform target)
     {
         ResetTriggers();
-        anim.SetTrigger("Walk");
         running = true;
         direction = (target.position - transform.position).normalized;
-        while (!CheckRot(.05f, Quaternion.LookRotation(direction).eulerAngles))
+        if (GetRotateDirection(transform.rotation.eulerAngles, destinations[currentDest].position - transform.position))
+        {
+            //Debug.Log("Left");
+            anim.SetTrigger("TurnLeft");
+        }
+        else
+        {
+            //Debug.Log("Right");
+            anim.SetTrigger("TurnRight");
+        }
+
+        agent.updateRotation = false;
+        while (!CheckRot(.1f, Quaternion.LookRotation(direction).eulerAngles))
         {
             direction = (target.position - transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
@@ -185,6 +267,7 @@ public class EnemyPatrol : MonoBehaviour
             yield return fixedUpdateWait;
         }
         transform.rotation = lookRotation;
+        agent.updateRotation = true;
         yield return lookTimeWait;
         if (Patroling)
         {
@@ -221,6 +304,26 @@ public class EnemyPatrol : MonoBehaviour
 
     private IEnumerator LookAtBrick(Transform target)
     {
+        ResetTriggers();
+        agent.updateRotation = false;
+        direction = (target.position - transform.position).normalized;
+        if (GetRotateDirection(transform.rotation.eulerAngles, target.position - transform.position))
+        {
+            anim.SetTrigger("TurnLeft");
+        }
+        else
+        {
+            anim.SetTrigger("TurnRight");
+        }
+        scale = 1;
+        while (!CheckRot(1f, Quaternion.LookRotation(direction).eulerAngles))
+        {
+            direction = (target.position- transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed * scale);
+            scale += Time.deltaTime;
+            yield return fixedUpdateWait;
+        } 
         ResetTriggers();
         anim.SetTrigger("Walk");
         running = true;
@@ -309,6 +412,25 @@ public class EnemyPatrol : MonoBehaviour
         anim.ResetTrigger("Gun");
         anim.ResetTrigger("Hit");
         anim.ResetTrigger("StandUp");
+        anim.ResetTrigger("TurnLeft");
+        anim.ResetTrigger("TurnRight");
     }
     
+    bool GetRotateDirection(Vector3 from, Vector3 to)
+    {
+        float clockWise = 0f;
+        float counterClockWise = 0f;
+ 
+        if (from.y <= to.y)
+        {
+            clockWise = to.y-from.y;
+            counterClockWise = from.y + (360-to.y);
+        }
+        else
+        {
+            clockWise = (360-from.y) + to.y;
+            counterClockWise = from.y-to.y;
+        }
+        return (clockWise <= counterClockWise);
+    }
 }
