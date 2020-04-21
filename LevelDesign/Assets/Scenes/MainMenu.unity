@@ -14697,6 +14697,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1927824972, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
+      propertyPath: intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927824972, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
+      propertyPath: MoveIntensity
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 605639888, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
       propertyPath: multiplier
       value: 1
@@ -14740,14 +14748,6 @@ PrefabInstance:
     - target: {fileID: 1927824973, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
       propertyPath: m_BoundingSphereOverride.z
       value: 6e-45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1927824972, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
-      propertyPath: intensity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1927824972, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
-      propertyPath: MoveIntensity
-      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 392506371, guid: ea5bef0c685df6d46b7febeb8eb35a8a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15520,7 +15520,7 @@ PrefabInstance:
     - target: {fileID: 8442559055714884779, guid: a8ef5fb6cbca3aa478f4e98508c5e395,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.05882353
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 8442559056225529318, guid: a8ef5fb6cbca3aa478f4e98508c5e395,
         type: 3}
@@ -21547,7 +21547,7 @@ PrefabInstance:
     - target: {fileID: 8442559055714884779, guid: a8ef5fb6cbca3aa478f4e98508c5e395,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.05882353
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 8442559056225529318, guid: a8ef5fb6cbca3aa478f4e98508c5e395,
         type: 3}
@@ -47225,7 +47225,7 @@ PrefabInstance:
     - target: {fileID: 8031334320731025060, guid: 081a058d9c153d340864c06e339b87ac,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.05882353
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 8576864556416491662, guid: 081a058d9c153d340864c06e339b87ac,
         type: 3}
