@@ -10,7 +10,9 @@
           <e p="EnemyEyeline.cs" t="Include" />
         </e>
         <e p="PaperMovement.cs" t="Include" />
+        <e p="RatNoises.cs" t="Include" />
         <e p="Scenes" t="Include">
+          <e p="Flickering.cs" t="Include" />
           <e p="ThirdPersonMovementJump.cs" t="Include" />
           <e p="Waitforevent.cs" t="Include" />
         </e>
@@ -59,6 +61,7 @@
             <e p="CollisionEvents.cs" t="Include" />
             <e p="Follow_Obj.cs" t="Include" />
             <e p="IfEvent.cs" t="Include" />
+            <e p="KeyCodeEvent.cs" t="Include" />
             <e p="OnInteractEvents.cs" t="Include" />
             <e p="OnStartEvents.cs" t="Include" />
             <e p="TriggerEvents.cs" t="Include" />
@@ -69,6 +72,9 @@
           </e>
           <e p="MainMenu.cs" t="Include" />
           <e p="MenuEvents.cs" t="Include" />
+          <e p="Music" t="Include">
+            <e p="MusicPause.cs" t="Include" />
+          </e>
           <e p="ParticleRotation.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="PlayerMovement" t="Include">

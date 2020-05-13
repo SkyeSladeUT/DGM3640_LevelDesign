@@ -18,6 +18,7 @@ public class EnemyAttack : MonoBehaviour
     private WaitForFixedUpdate fixedUpdateWait;
     private WaitForSeconds deathTimeWait;
     public CameraAnimation camAnim;
+    public AudioSource SurpriseGrunt, Gun, footSteps;
     
 
     private void Start()
@@ -43,11 +44,11 @@ public class EnemyAttack : MonoBehaviour
 
     private IEnumerator AttackFun()
     {
-
         end = false;
         StartCoroutine(RotatePlayer());
         end = true;
         yield return deathTimeWait;
+        Gun.Play();
         camAnim.Death();
         yield return deathTimeWait;
         Time.timeScale = 0;
@@ -77,6 +78,7 @@ public class EnemyAttack : MonoBehaviour
             if (!pm.isCrouched && player.GetComponent<PlayerMovement>().moving)
             {
                 Debug.Log("heard player");
+                SurpriseGrunt.Play();
                 distracted = false;
                 heardplayer = true;
                 patrol.GoToDest(player.transform.position);
@@ -89,6 +91,7 @@ public class EnemyAttack : MonoBehaviour
         if (!stunned)
         {
             Debug.Log("Go To Brick");
+            SurpriseGrunt.Play();
             patrol.GoToBrick(brick);
         }
     }
@@ -97,6 +100,10 @@ public class EnemyAttack : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Walk");
+        if (!footSteps.isPlaying)
+        {
+            footSteps.Play();
+        }
         patrol.TurnTowards(player.transform);
     }
     
@@ -115,6 +122,10 @@ public class EnemyAttack : MonoBehaviour
         running = true;
         ResetTriggers();
         anim.SetTrigger("Walk");
+        if (!footSteps.isPlaying)
+        {
+            footSteps.Play();
+        }
         direction = (target.position - transform.position).normalized;
         while (!CheckRot(.1f, Quaternion.LookRotation(direction).eulerAngles))
         {
@@ -124,6 +135,7 @@ public class EnemyAttack : MonoBehaviour
             yield return fixedUpdateWait;
         }
         transform.rotation = lookRotation;
+        footSteps.Stop();
         StartCoroutine(AttackFun());
 
     }

@@ -8,6 +8,7 @@ public class CameraAnimation : MonoBehaviour
     public Animator anim;
     public float floory, speed;
     private Vector3 movement;
+    public CameraMovement cammove;
 
     private void Start()
     {
@@ -16,10 +17,11 @@ public class CameraAnimation : MonoBehaviour
 
     public void Death()
     {
+        cammove.SetCanMove(false);
         anim.enabled = true;
-        movement = transform.position;
+        movement = transform.localPosition;
         movement.y = floory;
-        transform.position = movement;
+        transform.localPosition = movement;
     }
 
 }

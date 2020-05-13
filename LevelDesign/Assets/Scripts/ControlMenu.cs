@@ -8,6 +8,7 @@ public class ControlMenu : MonoBehaviour
     public GameObject ControlsObj;
     public UnityEvent onClose;
     private bool open;
+    public MusicPause music;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class ControlMenu : MonoBehaviour
     {
         open = true;
         Time.timeScale = 0;
+        music.PauseAudio();
         ControlsObj.SetActive(true);
     }
 

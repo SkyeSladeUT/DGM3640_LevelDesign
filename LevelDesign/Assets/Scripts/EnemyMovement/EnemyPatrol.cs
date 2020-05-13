@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyPatrol : MonoBehaviour
@@ -22,6 +23,7 @@ public class EnemyPatrol : MonoBehaviour
     public Animator anim;
     private WaitForFixedUpdate fixedUpdateWait;
     private WaitForSeconds lookTimeWait, stunTimeWait, delayWait, bricktimewait;
+    public AudioSource footsteps, hitGrunt;
 
 
     private void Awake()
@@ -48,6 +50,8 @@ public class EnemyPatrol : MonoBehaviour
         {
             ResetTriggers();
             anim.SetTrigger("LookAround");
+            footsteps.Stop();
+
         }
     }
 
@@ -109,6 +113,7 @@ public class EnemyPatrol : MonoBehaviour
         }        
         ResetTriggers();
         anim.SetTrigger("Walk");
+        footsteps.Play();
         running = true;
         attack.distracted = false;
         agent.destination = destinations[currentDest].position;
@@ -123,10 +128,10 @@ public class EnemyPatrol : MonoBehaviour
                 if (currentDest >= destinations.Count)
                     currentDest = 0;
                  ResetTriggers();
-                anim.SetTrigger("TurnLeft");
                 agent.updateRotation = false;
                 direction = (destinations[currentDest].position - transform.position).normalized;
                 scale = 1;
+                footsteps.Stop();
                 if (GetRotateDirection(transform.rotation.eulerAngles, destinations[currentDest].position - transform.position))
                 {
                     //Debug.Log("Left");
@@ -148,6 +153,7 @@ public class EnemyPatrol : MonoBehaviour
                 agent.updateRotation = true;
                 ResetTriggers();
                 anim.SetTrigger("Walk");
+                footsteps.Play();
 
             }
 
@@ -202,6 +208,7 @@ public class EnemyPatrol : MonoBehaviour
         ResetTriggers();
         running = true;
         direction = (origPos - transform.position).normalized;
+        footsteps.Stop();
         if (GetRotateDirection(transform.rotation.eulerAngles, origPos - transform.position))
         {
             //Debug.Log("Left");
@@ -224,6 +231,7 @@ public class EnemyPatrol : MonoBehaviour
         agent.updateRotation = true;
         ResetTriggers();
         anim.SetTrigger("Walk");
+        footsteps.Play();
         while (!CheckDest(.05f, origPos))
         {
             agent.destination = origPos;
@@ -239,6 +247,7 @@ public class EnemyPatrol : MonoBehaviour
         agent.updateRotation = true;
         ResetTriggers();
         anim.SetTrigger("LookAround");
+        footsteps.Stop();
         running = false;
     }
 
@@ -247,6 +256,7 @@ public class EnemyPatrol : MonoBehaviour
         ResetTriggers();
         running = true;
         direction = (target.position - transform.position).normalized;
+        footsteps.Stop();
         if (GetRotateDirection(transform.rotation.eulerAngles, destinations[currentDest].position - transform.position))
         {
             //Debug.Log("Left");
@@ -286,6 +296,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Walk");
+        footsteps.Play();
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -296,6 +307,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Walk");
+        footsteps.Play();
         if(Patroling)
             StopPatrol();
         StopAllCoroutines();
@@ -307,6 +319,7 @@ public class EnemyPatrol : MonoBehaviour
         ResetTriggers();
         agent.updateRotation = false;
         direction = (target.position - transform.position).normalized;
+        footsteps.Stop();
         if (GetRotateDirection(transform.rotation.eulerAngles, target.position - transform.position))
         {
             anim.SetTrigger("TurnLeft");
@@ -316,7 +329,7 @@ public class EnemyPatrol : MonoBehaviour
             anim.SetTrigger("TurnRight");
         }
         scale = 1;
-        while (!CheckRot(1f, Quaternion.LookRotation(direction).eulerAngles))
+        while (!CheckRot(2f, Quaternion.LookRotation(direction).eulerAngles))
         {
             direction = (target.position- transform.position).normalized;
             lookRotation = Quaternion.LookRotation(direction);
@@ -326,6 +339,9 @@ public class EnemyPatrol : MonoBehaviour
         } 
         ResetTriggers();
         anim.SetTrigger("Walk");
+        anim.speed *= 1.25f;
+        agent.speed *= 3;
+        footsteps.Play();
         running = true;
         while (!CheckDest(.05f, target.position))
         {
@@ -335,6 +351,7 @@ public class EnemyPatrol : MonoBehaviour
         attack.distracted = true;
         ResetTriggers();
         anim.SetTrigger("Idle");
+        footsteps.Stop();
         yield return bricktimewait;
         attack.distracted = false;
         if (Patroling)
@@ -352,16 +369,41 @@ public class EnemyPatrol : MonoBehaviour
     private IEnumerator GoTowards(Vector3 target)
     {
         ResetTriggers();
+        agent.updateRotation = false;
+        direction = (target - transform.position).normalized;
+        footsteps.Stop();
+        if (GetRotateDirection(transform.rotation.eulerAngles, target - transform.position))
+        {
+            anim.SetTrigger("TurnLeft");
+        }
+        else
+        {
+            anim.SetTrigger("TurnRight");
+        }
+        scale = 1;
+        while (!CheckRot(2f, Quaternion.LookRotation(direction).eulerAngles))
+        {
+            direction = (target- transform.position).normalized;
+            lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed * scale);
+            scale += Time.deltaTime;
+            yield return fixedUpdateWait;
+        } 
+        ResetTriggers();
         anim.SetTrigger("Walk");
+        anim.speed = 1.25f;
+        agent.speed *= 3;
+        footsteps.Play();
         attack.distracted = false;
         running = true;
-        while (!CheckDest(.05f, target))
+        while (!CheckDest(.1f, target))
         {
             agent.SetDestination(target);
             yield return fixedUpdateWait;
         }
         ResetTriggers();
         anim.SetTrigger("LookAround");
+        footsteps.Stop();
         yield return lookTimeWait;
         attack.heardplayer = false;
         if (Patroling)
@@ -380,11 +422,14 @@ public class EnemyPatrol : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("LookAround");
+        footsteps.Stop();
     }
 
     public void Stun()
     {
         ResetTriggers();
+        footsteps.Stop();
+        hitGrunt.Play();
         anim.SetTrigger("Hit");
         Debug.Log("Stun");
         agent.speed = 0;
@@ -406,6 +451,8 @@ public class EnemyPatrol : MonoBehaviour
 
     private void ResetTriggers()
     {
+        anim.speed = 1;
+        agent.speed = speed;
         anim.ResetTrigger("Walk");
         anim.ResetTrigger("Idle");
         anim.ResetTrigger("LookAround");

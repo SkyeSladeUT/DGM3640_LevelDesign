@@ -11,6 +11,7 @@ public class Door_Rotate : MonoBehaviour
     private bool open, inRange, running;
     private float rotateAmount, totalRotateAmount, partialRotate;
     private WaitForFixedUpdate _fixedUpdate;
+    public AudioSource DoorSound;
 
     private void Start()
     {
@@ -58,7 +59,7 @@ public class Door_Rotate : MonoBehaviour
                     rotateAmount = -RotateAmount;
                     open = true;
                 }
-
+                DoorSound.Play();
                 totalRotateAmount = 0;
                 while (totalRotateAmount >= rotateAmount+1f || totalRotateAmount <= rotateAmount - 1f)
                 {

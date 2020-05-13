@@ -8,6 +8,7 @@ TagManager:
   - Brick
   - Fire
   - Friend
+  - ignoreTag
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Friend
   - House
   - Wall
-  - 
-  - 
+  - rubble
+  - Door
   - 
   - 
   - 

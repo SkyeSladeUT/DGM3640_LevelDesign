@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public Color initColor, selectedColor;
     private int currentSelection;
     private bool open;
+    public MusicPause music;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         currentSelection = 0;
+        music.PauseAudio();
         menuOptions[0].color = selectedColor;
         if (menuOptions.Count > 1)
         {
@@ -86,6 +88,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Run Close");
         open = false;
+        music.ResumeAudio();
         menuObj.SetActive(false);
         Time.timeScale = 1;
     }

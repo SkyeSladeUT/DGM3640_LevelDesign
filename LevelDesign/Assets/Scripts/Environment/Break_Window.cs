@@ -7,6 +7,7 @@ public class Break_Window : MonoBehaviour
 {
     public GameObject UnBrokenWindow, BrokenWindow;
     private bool broken;
+    public AudioSource breakWindow;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class Break_Window : MonoBehaviour
         if (!broken && other.CompareTag("Brick"))
         {
             //Debug.Log("Break");
+            breakWindow.Play();
             broken = true;
             UnBrokenWindow.SetActive(false);
             BrokenWindow.SetActive(true);

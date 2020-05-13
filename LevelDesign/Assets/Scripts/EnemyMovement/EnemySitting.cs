@@ -19,6 +19,7 @@ public class EnemySitting : MonoBehaviour
     public CameraAnimation camAnim;
     private Vector3 direction;
     private Quaternion lookRotation;
+    public AudioSource Gun, Surprise, Grunt;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class EnemySitting : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Hit");
+        Grunt.Play();
         if(!running)
             StartCoroutine(StunTimer());
     }
@@ -81,6 +83,7 @@ public class EnemySitting : MonoBehaviour
         end = false;
         StartCoroutine(RotatePlayer());
         yield return deathTimeWait;
+        Gun.Play();
         end = true;
         camAnim.Death();
         yield return deathTimeWait;
@@ -145,6 +148,7 @@ public class EnemySitting : MonoBehaviour
         sightObj.SetActive(true);
         ResetTriggers();
         anim.SetTrigger("LookUp");
+        Surprise.Play();
         looking = true;
         yield return lookTimeWait;
         looking = false;

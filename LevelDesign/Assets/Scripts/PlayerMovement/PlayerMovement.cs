@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public float CrouchDecrease;
     private WaitForFixedUpdate _fixedUpdate;
     public Transform brickHold;
+    public AudioSource outsidefootsteps, indoorfootsteps;
+    public bool indoors;
 
     private void Awake()
     {
@@ -74,9 +76,27 @@ public class PlayerMovement : MonoBehaviour
             if (movement.x!=0 || movement.z!=0)
             {
                 moving = true;
+                if (!indoors)
+                {
+                    if (!outsidefootsteps.isPlaying)
+                        outsidefootsteps.Play();
+                    if(indoorfootsteps.isPlaying)
+                        indoorfootsteps.Stop();
+                }
+                if (indoors)
+                {
+                    if (!indoorfootsteps.isPlaying)
+                        indoorfootsteps.Play();
+                    if(outsidefootsteps.isPlaying)
+                        outsidefootsteps.Stop();
+                }
             }
             else
             {
+                if(outsidefootsteps.isPlaying)
+                    outsidefootsteps.Stop();
+                if(indoorfootsteps.isPlaying)
+                    indoorfootsteps.Stop();
                 moving = false;
             }
 
@@ -106,6 +126,11 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = scale;
             yield return _fixedUpdate;
         }
+    }
+
+    public void SetIndoors(bool value)
+    {
+        indoors = value;
     }
 }
 

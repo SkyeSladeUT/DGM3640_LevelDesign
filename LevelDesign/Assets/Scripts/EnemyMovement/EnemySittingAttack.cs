@@ -20,6 +20,8 @@ public class EnemySittingAttack : MonoBehaviour
     private WaitForSeconds stunTimeWait, lookTimeWait, delayTime, deathTimeWait;
     private WaitForFixedUpdate fixedUpdateTime;
     public CameraAnimation camAnim;
+    public AudioSource Gun, Surprise, Grunt;
+
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class EnemySittingAttack : MonoBehaviour
     {
         ResetTriggers();
         anim.SetTrigger("Hit");
+        Grunt.Play();
         Debug.Log("Stun");
         if(!running)
             StartCoroutine(StunTimer());
@@ -77,6 +80,7 @@ public class EnemySittingAttack : MonoBehaviour
         end = false;
         StartCoroutine(RotatePlayer());
         yield return deathTimeWait;
+        Gun.Play();
         end = true;
         camAnim.Death();
         yield return deathTimeWait;
@@ -107,6 +111,7 @@ public class EnemySittingAttack : MonoBehaviour
             if (!pm.isCrouched && player.GetComponent<PlayerMovement>().moving)
             {
                 Debug.Log("heard player");
+                Surprise.Play();
                 if(!running)
                     StartCoroutine(LookAt(player.transform));
                 distracted = false;
@@ -120,6 +125,7 @@ public class EnemySittingAttack : MonoBehaviour
         if (!stunned)
         {
             Debug.Log("Look At Brick");
+            Surprise.Play();
             if(!running)
                 StartCoroutine(LookAtBrick(brick));
         }

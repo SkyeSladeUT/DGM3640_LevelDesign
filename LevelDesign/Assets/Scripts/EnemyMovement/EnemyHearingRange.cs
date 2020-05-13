@@ -14,9 +14,12 @@ public class EnemyHearingRange : MonoBehaviour
     public bool HearThroughWalls = true;
     private Brick brickScript;
     private Transform brickTrans;
+    private int layermask;
 
     private void Start()
     {
+        layermask = LayerMask.GetMask("Door");
+        layermask = ~layermask;
         brick = null;
     }
 
@@ -57,7 +60,7 @@ public class EnemyHearingRange : MonoBehaviour
             else
             {
                 if (Physics.Raycast(eyeline.transform.position,
-                    (player.transform.position - eyeline.transform.position), out hit, hearingDistance))
+                    (player.transform.position - eyeline.transform.position), out hit, hearingDistance, layermask))
                 {
                     if (hit.collider.CompareTag("Player"))
                     {
